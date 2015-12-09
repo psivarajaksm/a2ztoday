@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Ledgergroupmaster" table="ledgergroupmaster" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="100" />
+            <generator class="assigned" />
+        </id>
+        <property name="ledgergroupname" type="string">
+            <column name="ledgergroupname" length="250" />
+        </property>
+        <set name="ledgermasters" inverse="true">
+            <key>
+                <column name="ledgergroupid" length="100" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Ledgermaster" />
+        </set>
+    </class>
+</hibernate-mapping>

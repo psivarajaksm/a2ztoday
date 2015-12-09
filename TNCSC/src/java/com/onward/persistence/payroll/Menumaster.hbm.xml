@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Menumaster" table="menumaster" schema="public">
+        <id name="code" type="int">
+            <column name="code" />
+            <generator class="assigned" />
+        </id>
+        <property name="actionname" type="string">
+            <column name="actionname" length="250" />
+        </property>
+        <property name="methodname" type="string">
+            <column name="methodname" length="250" />
+        </property>
+        <property name="labelname" type="string">
+            <column name="labelname" length="250" />
+        </property>
+        <property name="parentcode" type="java.lang.Integer">
+            <column name="parentcode" />
+        </property>
+        <property name="menuorder" type="java.lang.Integer">
+            <column name="menuorder" />
+        </property>
+        <property name="isvisible" type="java.lang.Boolean">
+            <column name="isvisible" />
+        </property>
+        <property name="grouptype" type="java.lang.Character">
+            <column name="grouptype" length="1" />
+        </property>
+        <set name="menuprivilageses" inverse="true">
+            <key>
+                <column name="menumaster" not-null="true" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Menuprivilages" />
+        </set>
+    </class>
+</hibernate-mapping>

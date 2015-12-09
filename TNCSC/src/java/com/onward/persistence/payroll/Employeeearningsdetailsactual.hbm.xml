@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Employeeearningsdetailsactual" table="employeeearningsdetailsactual" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="salarystructureactual" class="com.onward.persistence.payroll.Salarystructureactual" fetch="select">
+            <column name="salarystructureid" length="50" />
+        </many-to-one>
+        <property name="earningmasterid" type="string">
+            <column name="earningmasterid" length="25" />
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="25" />
+        </property>
+        <property name="percentage" type="big_decimal">
+            <column name="percentage" precision="5" />
+        </property>
+        <property name="ispercentage" type="java.lang.Boolean">
+            <column name="ispercentage" />
+        </property>
+        <property name="cancelled" type="java.lang.Boolean">
+            <column name="cancelled" />
+        </property>
+        <property name="accregion" type="string">
+            <column name="accregion" />
+        </property>
+    </class>
+</hibernate-mapping>

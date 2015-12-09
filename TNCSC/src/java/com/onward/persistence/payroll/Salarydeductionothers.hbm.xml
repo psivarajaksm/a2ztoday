@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Salarydeductionothers" table="salarydeductionothers" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="25" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="paycodemaster" class="com.onward.persistence.payroll.Paycodemaster" fetch="select">
+            <column name="deductioncode" length="6" not-null="true" />
+        </many-to-one>
+        <many-to-one name="employeemaster" class="com.onward.persistence.payroll.Employeemaster" fetch="select">
+            <column name="employeeprovidentfundnumber" length="25" />
+        </many-to-one>
+        <property name="deductionmode" type="java.lang.Integer">
+            <column name="deductionmode">
+                <comment>-- 1--&gt;Fixed Amount, 2--&gt;salary proportionate</comment>
+            </column>
+        </property>
+        <property name="deductionmonth" type="java.lang.Integer">
+            <column name="deductionmonth" />
+        </property>
+        <property name="deductionyear" type="java.lang.Integer">
+            <column name="deductionyear" />
+        </property>
+        <property name="amountornoofdays" type="big_decimal">
+            <column name="amountornoofdays" precision="10" />
+        </property>
+        <property name="synchronized_" type="java.lang.Boolean">
+            <column name="synchronized" />
+        </property>
+        <property name="intallmenttype" type="java.lang.Integer">
+            <column name="intallmenttype" />
+        </property>
+        <property name="accregion" type="string">
+            <column name="accregion" length="50" />
+        </property>
+        <property name="cancelled" type="java.lang.Boolean">
+            <column name="cancelled" />
+        </property>
+        <property name="createddate" type="date">
+            <column name="createddate" length="13" />
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

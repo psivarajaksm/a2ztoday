@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Employeemaster" table="employeemaster" schema="public">
+        <id name="epfno" type="string">
+            <column name="epfno" length="25" />
+            <generator class="assigned" />
+        </id>
+        <property name="fpfno" type="string">
+            <column name="fpfno" length="16" />
+        </property>
+        <property name="employeename" type="string">
+            <column name="employeename" length="100" />
+        </property>
+        <property name="fathername" type="string">
+            <column name="fathername" length="50" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="5" />
+        </property>
+        <property name="dateofbirth" type="date">
+            <column name="dateofbirth" length="13" />
+        </property>
+        <property name="dateofappoinment" type="date">
+            <column name="dateofappoinment" length="13" />
+        </property>
+        <property name="dateofprobation" type="date">
+            <column name="dateofprobation" length="13" />
+        </property>
+        <property name="dateofconfirmation" type="date">
+            <column name="dateofconfirmation" length="13" />
+        </property>
+        <property name="region" type="string">
+            <column name="region" length="100" />
+        </property>
+        <property name="section" type="string">
+            <column name="section" length="100" />
+        </property>
+        <property name="designation" type="string">
+            <column name="designation" length="50" />
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="16" />
+        </property>
+        <property name="createddate" type="date">
+            <column name="createddate" length="13" />
+        </property>
+        <property name="empSta" type="string">
+            <column name="emp_sta" length="5" />
+        </property>
+        <property name="paymentmode" type="string">
+            <column name="paymentmode" length="5" />
+        </property>
+        <property name="banksbaccount" type="string">
+            <column name="banksbaccount" length="50" />
+        </property>
+        <property name="bankcode" type="string">
+            <column name="bankcode" length="200" />
+        </property>
+        <property name="pancardno" type="string">
+            <column name="pancardno" length="50" />
+        </property>
+        <property name="community" type="string">
+            <column name="community" length="25" />
+        </property>
+        <property name="eslp" type="date">
+            <column name="eslp" length="13" />
+        </property>
+        <property name="employeecode" type="string">
+            <column name="employeecode" length="25" />
+        </property>
+        <property name="process" type="boolean">
+            <column name="process" not-null="true" />
+        </property>
+        <property name="serialno" type="int">
+            <column name="serialno" not-null="true" />
+        </property>
+        <property name="synchronized_" type="java.lang.Boolean">
+            <column name="synchronized" />
+        </property>
+        <property name="category" type="string">
+            <column name="category" length="5" />
+        </property>
+        <property name="subsection" type="string">
+            <column name="subsection" length="50" />
+        </property>
+        <property name="nativeregion" type="string">
+            <column name="nativeregion" length="100" />
+        </property>
+        <property name="currentpositionjoindate" type="date">
+            <column name="currentpositionjoindate" length="13" />
+        </property>
+        <property name="currentpositionjointime" type="string">
+            <column name="currentpositionjointime" length="5" />
+        </property>
+        <set name="employeeprovidentfundotherses" inverse="true">
+            <key>
+                <column name="epfno" length="25" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Employeeprovidentfundothers" />
+        </set>
+        <set name="salarystructureactuals" inverse="true">
+            <key>
+                <column name="employeeprovidentfundnumber" length="25" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Salarystructureactual" />
+        </set>
+        <set name="surrenderbills" inverse="true">
+            <key>
+                <column name="epfno" length="25" not-null="true" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Surrenderbill" />
+        </set>
+        <set name="miscdeductionses" inverse="true">
+            <key>
+                <column name="employeeprovidentfundnumber" length="25" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Miscdeductions" />
+        </set>
+        <set name="employeetransferhistories" inverse="true">
+            <key>
+                <column name="epfno" length="25" not-null="true" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Employeetransferhistory" />
+        </set>
+        <set name="stoppayrolldetailses" inverse="true">
+            <key>
+                <column name="epfno" length="25" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Stoppayrolldetails" />
+        </set>
+        <set name="salarydeductionotherses" inverse="true">
+            <key>
+                <column name="employeeprovidentfundnumber" length="25" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Salarydeductionothers" />
+        </set>
+        <set name="employeerecoverieses" inverse="true">
+            <key>
+                <column name="employeeprovidentfundnumber" length="25" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Employeerecoveries" />
+        </set>
+        <set name="employeeattendances" inverse="true">
+            <key>
+                <column name="employeeprovidentfundnumber" length="25" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Employeeattendance" />
+        </set>
+        <set name="payrollprocessingdetailses" inverse="true">
+            <key>
+                <column name="employeeprovidentfundnumber" length="25" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Payrollprocessingdetails" />
+        </set>
+        <set name="employeedeductionaccountcodes" inverse="true">
+            <key>
+                <column name="employeeprovidentfundnumber" length="25" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Employeedeductionaccountcode" />
+        </set>
+        <set name="employeedesignations" inverse="true">
+            <key>
+                <column name="epfno" length="25" not-null="true" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Employeedesignation" />
+        </set>
+        <set name="salarystructures" inverse="true">
+            <key>
+                <column name="employeeprovidentfundnumber" length="25" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Salarystructure" />
+        </set>
+        <set name="usermasters" inverse="true">
+            <key>
+                <column name="epfno" length="25" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Usermaster" />
+        </set>
+        <set name="supplementatypaybills" inverse="true">
+            <key>
+                <column name="employeeprovidentfundnumber" length="25" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Supplementatypaybill" />
+        </set>
+        <set name="employeeloansandadvanceses" inverse="true">
+            <key>
+                <column name="employeeprovidentfundnumber" length="25" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Employeeloansandadvances" />
+        </set>
+    </class>
+</hibernate-mapping>

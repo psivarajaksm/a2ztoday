@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Receiptpaymentdetailspending" table="receiptpaymentdetailspending" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="100" />
+            <generator class="assigned" />
+        </id>
+        <property name="partyledger" type="string">
+            <column name="partyledger" length="100" not-null="true" />
+        </property>
+        <property name="bankname" type="string">
+            <column name="bankname" length="100" />
+        </property>
+        <property name="voucher" type="string">
+            <column name="voucher" length="100" />
+        </property>
+        <property name="paymentmode" type="string">
+            <column name="paymentmode" length="100" />
+        </property>
+        <property name="refno" type="string">
+            <column name="refno" length="100" />
+        </property>
+        <property name="chequedetails" type="string">
+            <column name="chequedetails" length="100" />
+        </property>
+        <property name="chequeno" type="string">
+            <column name="chequeno" length="100" />
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="25" />
+        </property>
+        <property name="cancelled" type="java.lang.Boolean">
+            <column name="cancelled" />
+        </property>
+        <property name="region" type="string">
+            <column name="region" length="5" />
+        </property>
+        <property name="serialno" type="java.lang.Integer">
+            <column name="serialno" />
+        </property>
+        <property name="chequedate" type="date">
+            <column name="chequedate" length="13" />
+        </property>
+        <property name="favourof" type="string">
+            <column name="favourof" length="250" />
+        </property>
+        <property name="createddate" type="date">
+            <column name="createddate" length="13" />
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="100" />
+        </property>
+        <property name="otherbankname" type="string">
+            <column name="otherbankname" length="250" />
+        </property>
+        <property name="bankchallan" type="string">
+            <column name="bankchallan" length="100" />
+        </property>
+        <property name="realized" type="java.lang.Boolean">
+            <column name="realized" />
+        </property>
+        <property name="realizeddate" type="date">
+            <column name="realizeddate" length="13" />
+        </property>
+        <property name="accountingperiod" type="string">
+            <column name="accountingperiod" length="3" />
+        </property>
+        <property name="accountbook" type="string">
+            <column name="accountbook" length="3" />
+        </property>
+    </class>
+</hibernate-mapping>

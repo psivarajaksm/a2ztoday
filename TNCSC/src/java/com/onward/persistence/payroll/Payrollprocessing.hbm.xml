@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Payrollprocessing" table="payrollprocessing" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="25" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="regionmaster" class="com.onward.persistence.payroll.Regionmaster" fetch="select">
+            <column name="region" length="5" />
+        </many-to-one>
+        <property name="month" type="java.lang.Integer">
+            <column name="month" />
+        </property>
+        <property name="year" type="java.lang.Integer">
+            <column name="year" />
+        </property>
+        <property name="isopen" type="java.lang.Boolean">
+            <column name="isopen" />
+        </property>
+        <property name="synchronized_" type="java.lang.Boolean">
+            <column name="synchronized" />
+        </property>
+        <property name="accregion" type="string">
+            <column name="accregion" length="50" />
+        </property>
+        <property name="createddate" type="date">
+            <column name="createddate" length="13" />
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

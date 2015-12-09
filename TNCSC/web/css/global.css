@@ -1,0 +1,199 @@
+@charset "utf-8";
+
+/* Start First CSS */
+body{
+    margin:0;
+    padding:100px 0px 55px 0px;
+    /*background-color:#c9e1fc;*/
+    background-color:#DAE9FB;
+    background-repeat: repeat;
+    margin-left: 0%;
+    margin-top: 0%;
+    margin-right: 0%;
+    margin-bottom: 0%;
+}
+div#header{
+    position:absolute;
+    top:0;
+    left:0;
+    /*width:500%;*/
+    width:100%;
+    height:75px;
+    background:url(../images/headerBg.jpg) repeat ;
+}
+div#left-sidebar{
+    width:0px;
+    position:fixed;/* for good browers */
+    left:0;
+    top:75px;
+    bottom:55px;/* this will enable a vertical scrollbar to appear in good browsers*/
+    overflow:auto;/* this will enable a vertical scrollbar to appear in good browsers*/
+    background-color:#E7F0FA;
+    /*background-color:#E2EFFE;*/
+}
+div#footer{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:55px;
+    background-color:#DAE9FB;
+    z-index:1000;
+}
+@media screen{
+    body>form>div#header{
+        position:fixed;
+    }
+    body>form>div#left-sidebar{
+        position:fixed;
+    }
+    body>form>div#footer{
+        position:fixed;
+    }
+}
+* html body{
+    overflow:hidden;
+}
+* html div#content{
+    height:100%;
+    overflow:auto;
+    background-color:#DAE9FB;
+}
+* html #left-sidebar {position:absolute;}
+/* End First CSS */
+
+
+/* Start Second CSS */
+.menu{
+    width: 180px; /*width of menu*/
+    /*border: 2px outset #9ac6fc;*/
+    border-style: solid solid none solid;
+    border-color: #9ac6fc;
+    border-width: 1px;    
+}
+.menu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.menu li a{
+    font: 11px Verdana, Arial, Helvetica, sans-serif;
+    display: block;
+    background: transparent url(../images/menu_arrow.gif) 100% 0;
+    height: 24px; /*Set to height of bg image- padding within link (ie: 32px - 4px - 4px)*/
+    padding: 4px 0 4px 10px;
+    line-height: 24px; /*Set line-height of bg image- padding within link (ie: 32px - 4px - 4px)*/
+    text-decoration: none;
+    border-left: 5px solid #08088A;
+}
+.menu li span a{
+    font: 10px Verdana, Arial, Helvetica, sans-serif;
+    display: block;    
+}
+.menu li a:link, .menu li a:visited {
+    color: #031F5F;
+}
+.menu li a:hover{
+    color: #800000;
+    background-position: 100% -32px;
+    padding: 4px 0px 4px 12px;
+    border-left: 5px solid #800000;
+    font-weight:bold;    
+}
+.menu li a.selected{
+    color: #26370A;
+    background-position: 100% -64px;
+}
+.submenu{
+    display: block;
+    padding: 0px 0px 0px 8px;
+    text-decoration: none;
+    background-color:#E4ECFF;
+    text-align:left;
+}
+a{
+    text-decoration: none;
+}
+/* End Second CSS */
+
+.loginMiddleRow {
+    background:url(../images/LoginMiddleImage.jpg) no-repeat;
+}
+.headerTopRow {
+    background:url(../images/header_top.jpg) no-repeat;
+    height:73px;
+}
+.headerTopRowImage {
+    background:url(../images/header_top.jpg) no-repeat;
+    height:73px;
+}
+.footerPage {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 11px;
+    color: #616161;;
+    text-decoration:none;
+}
+.footerTopRow {
+    width: 100%;
+    background:url(../images/footer.jpg) repeat-x;
+}
+.homefooter_m a {
+    font-family:Verdana, Geneva, sans-serif;
+    font-size: 10px;
+    font-weight: normal;
+    color:#616161;
+    text-decoration:none;
+}
+.homefooter_m a:hover {
+    font-family:Verdana, Geneva, sans-serif;
+    font-size:10px;
+    color:#de3a36;
+    text-decoration:none;
+}
+.footer {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #ffffff;
+	line-height: 20px;
+	text-decoration: none;
+}
+.headerrow {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+    font-weight:bold;
+	color: #FFFFFF;
+	line-height: 29px;
+	text-decoration: none;
+	text-transform: capitalize;
+}
+
+.tableStyle {
+    width:92%;
+    background:transparent;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 11px;
+    color: #000000;
+    text-decoration:none;
+}
+.pointer {
+    margin:0px;
+    padding:5px 0px 0px 0px;
+}
+.headerTablePoint{
+    padding:0px 0px 0px 2px;
+    margin:0px;
+    line-height:20px;
+}
+.pointsTable{
+    padding:0px 0px 0px 30px;
+    margin:0px;
+    line-height:20px;
+}
+.verTable {
+    border: 2px outset #94670a;
+    padding:0px 0px 0px 20px;
+}
+
+.topLeftCur_2 { background:url(../images/curveBox_2/topLeftCur_2.jpg); background-repeat:no-repeat; width:68px; height:27px; float:left; padding:0px 0px 0px 0px; margin:0px;}
+.ibMiddBg { width:100%; background:url(../images/curveBox_2/topHoriLine_2.jpg) repeat-x; height:27px; font-family:Verdana, sans-serif; color:#01283b; font-size:11px; font-weight:bold; padding-left:10px; margin:0px; }
+.topRightCur_2 { background:url(../images/curveBox_2/topRightCur_2.jpg); background-repeat:no-repeat; width:22px; height:27px; float:left; padding:0px 0px 0px 0px; margin:0px;}

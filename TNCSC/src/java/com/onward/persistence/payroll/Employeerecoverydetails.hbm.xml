@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Employeerecoverydetails" table="employeerecoverydetails" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="payrollprocessingdetails" class="com.onward.persistence.payroll.Payrollprocessingdetails" fetch="select">
+            <column name="payrollprocessingdetailsid" length="100" />
+        </many-to-one>
+        <many-to-one name="employeerecoveries" class="com.onward.persistence.payroll.Employeerecoveries" fetch="select">
+            <column name="employeerecoveriesid" length="50" />
+        </many-to-one>
+        <property name="nthinstallment" type="java.lang.Integer">
+            <column name="nthinstallment" />
+        </property>
+        <property name="installmentamount" type="big_decimal">
+            <column name="installmentamount" precision="25" />
+        </property>
+        <property name="loanbalance" type="big_decimal">
+            <column name="loanbalance" precision="25" />
+        </property>
+        <property name="cancelled" type="java.lang.Boolean">
+            <column name="cancelled" />
+        </property>
+        <property name="accregion" type="string">
+            <column name="accregion" length="50" />
+        </property>
+        <property name="createddate" type="date">
+            <column name="createddate" length="13" />
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

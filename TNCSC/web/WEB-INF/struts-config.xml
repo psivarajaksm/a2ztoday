@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+    <form-beans>
+        <form-bean name="OnwardForm" type="org.apache.struts.validator.DynaValidatorForm">
+            <form-property name="method" type="java.lang.String"/>
+            <form-property name="allow" type="java.lang.String"/>
+            <form-property name="message" type="java.lang.String"/>
+
+            <form-property name="userid" type="java.lang.String"/>
+            <form-property name="password" type="java.lang.String"/>
+            <form-property name="username" type="java.lang.String"/>
+            <form-property name="statustype" type="java.lang.String"/>
+            <form-property name="userstatus" type="java.lang.String"/>
+            <form-property name="usertype" type="java.lang.String"/>
+            <form-property name="presentstatus" type="java.lang.String"/>
+
+            <form-property name="forgotuserid" type="java.lang.String"/>
+            <form-property name="newpassword" type="java.lang.String"/>
+            <form-property name="confirmpassword" type="java.lang.String"/>
+
+            <form-property name="functiontype" type="java.lang.String"/>
+            <form-property name="customerid" type="java.lang.String"/>
+            <form-property name="accountnumber" type="java.lang.String"/>
+            <form-property name="accountcount" type="java.lang.String"/>
+            <form-property name="beneficiarycount" type="java.lang.String"/>
+            <form-property name="currentpassword" type="java.lang.String"/>
+            <form-property name="mobilenumber" type="java.lang.String"/>
+            <form-property name="dateofbirth" type="java.lang.String"/>
+
+            <form-property name="secretquestionone" type="java.lang.String"/>
+            <form-property name="secretquestiontwo" type="java.lang.String"/>
+            <form-property name="youranswerone" type="java.lang.String"/>
+            <form-property name="youranswertwo" type="java.lang.String"/>
+            <form-property name="emailid" type="java.lang.String"/>
+            <form-property name="producttype" type="java.lang.String"/>
+
+            <form-property name="district" type="java.lang.String"/>
+            <form-property name="districtid" type="java.lang.String"/>
+            <form-property name="suppliertype" type="java.lang.String"/>
+            <form-property name="suppliersubtype" type="java.lang.String"/>
+            <form-property name="functionflag" type="java.lang.String"/>
+            <form-property name="supplierid" type="java.lang.String"/>
+            <form-property name="quantitytobesupplied" type="java.lang.Long"/>
+
+            <form-property name="creditaccnumber" type="java.lang.String"/>
+            <form-property name="debitaccnumber" type="java.lang.String"/>
+
+            <form-property name="tenderphaseid" type="java.lang.String"/>
+            <form-property name="nameofthework" type="java.lang.String"/>
+            <form-property name="tenderreference" type="java.lang.String"/>
+            <form-property name="advertisedon" type="java.lang.String"/>
+            <form-property name="gonumber" type="java.lang.String"/>
+
+            <form-property name="duedate" type="java.lang.String"/>
+            <form-property name="openingdate" type="java.lang.String"/>
+            <form-property name="laptopwarrantyperiod" type="java.lang.String"/>
+            <form-property name="battarywarrantyperiod" type="java.lang.String"/>
+            <form-property name="remarks" type="java.lang.String"/>
+            <form-property name="institutionids" type="java.lang.String"/>
+
+            <form-property name="batchnumber" type="java.lang.String"/>
+            <form-property name="ponumber" type="java.lang.String"/>
+            <form-property name="batchsize" type="java.lang.String"/>
+            <form-property name="referencenumber" type="java.lang.String"/>
+            <form-property name="dateofsubmission" type="java.lang.String"/>
+            <form-property name="lotsize" type="java.lang.String"/>
+            <form-property name="isfullytested" type="java.lang.String"/>
+            <form-property name="inspectionreference" type="java.lang.String"/>
+            <form-property name="isoriginalorrework" type="java.lang.String"/>
+            <form-property name="inspectionstage" type="java.lang.String"/>
+
+            <form-property name="noofstudents" type="java.lang.String"/>
+            <form-property name="istaluknotexist" type="java.lang.String"/>
+            <form-property name="submitdate" type="java.lang.String"/>
+            <form-property name="invoicenumber" type="java.lang.String"/>
+            <form-property name="invoicedate" type="java.lang.String"/>
+            <form-property name="lorrynumber" type="java.lang.String"/>
+            <form-property name="drivermobilenumber" type="java.lang.String"/>
+            <form-property name="deliverydate" type="java.lang.String"/>
+            <form-property name="startingproductid" type="java.lang.String"/>
+            <form-property name="endproductid" type="java.lang.String"/>
+            <form-property name="inspectionstatus" type="java.lang.String"/>
+            <form-property name="samplestage" type="java.lang.String"/>
+            <form-property name="productstatus" type="java.lang.String"/>
+            <form-property name="taluk" type="java.lang.String"/>
+            <form-property name="institutiontype" type="java.lang.String"/>
+            <form-property name="institutionsubtype" type="java.lang.String"/>
+            <form-property name="testingtype" type="java.lang.String"/>
+
+            <form-property name="startingproductsearialnumber" type="java.lang.String"/>
+            <form-property name="productsentfortesting" type="java.lang.String"/>
+            <form-property name="typeproductid" type="java.lang.String"/>
+            <form-property name="typetestingdate" type="java.lang.String"/>
+            <form-property name="typetestingremarks" type="java.lang.String"/>
+            <form-property name="productid" type="java.lang.String"/>
+            <form-property name="productserialmodelnumber" type="java.lang.String"/>
+            <form-property name="indentid" type="java.lang.String"/>
+            <form-property name="fileuploadname" type="org.apache.struts.upload.FormFile"/>
+            <form-property name="productIDEntryType" type="java.lang.String"/>
+            <form-property name="institutionid" type="java.lang.String"/>
+            <form-property name="invoiceamt" type="java.lang.String"/>
+            <form-property name="invoiceamtnotax" type="java.lang.String"/>
+            <form-property name="actiontype" type="java.lang.String"/>
+            <form-property name="year" type="java.lang.String"/>
+            <form-property name="month" type="java.lang.String"/>
+            <form-property name="sectionname" type="java.lang.String"/>  
+            <form-property name="epfno" type="java.lang.String"/>
+            <form-property name="billno" type="java.lang.String"/>            
+            <form-property name="paymenttype" type="java.lang.String"/>
+            <form-property name="deductionid" type="java.lang.String"/>
+            <form-property name="asondate" type="java.lang.String"/>
+            <form-property name="billtype" type="java.lang.String"/>
+            <form-property name="billnumbers" type="java.lang.String[]"/>
+            <form-property name="regionid" type="java.lang.String"/>
+            <form-property name="regionname" type="java.lang.String"/>
+            <form-property name="fileName" type="java.lang.String"/>
+            <form-property name="filePath" type="java.lang.String"/>
+            <form-property name="accessright" type="java.lang.String"/>
+            <form-property name="uFile" type="org.apache.struts.upload.FormFile" />
+            <form-property name="usertypeids" type="java.lang.String"/>
+            <form-property name="currentusermodule" type="java.lang.String"/>
+            <form-property name="fyearvalue" type="java.lang.String"/>
+            <form-property name="isAccountModule" type="java.lang.String"/>
+            <form-property name="receipt" type="java.lang.String"/>
+            
+            <form-property name="periodsele" type="java.lang.String"/>
+            <form-property name="acbook" type="java.lang.String"/>
+            <form-property name="realfromdate" type="java.lang.String"/>
+            <form-property name="realtodate" type="java.lang.String"/>
+            <form-property name="realized" type="java.lang.String"/>
+            <form-property name="bankname" type="java.lang.String"/>
+            <form-property name="accountingperiod" type="java.lang.String"/>
+            <form-property name="accountbook" type="java.lang.String"/>
+            
+        </form-bean>
+    </form-beans>
+    
+    <global-exceptions>
+    
+    </global-exceptions>
+
+    <global-forwards>
+        <forward name="welcome"  path="/Welcome.do"/>
+    </global-forwards>
+
+    <action-mappings>
+        <action path="/Welcome" forward="/welcomeStruts.jsp"/>
+        
+        <action path="/LoginAction" name="OnwardForm" type="com.onward.action.LoginAction" scope="request" parameter="method" validate="false">
+            <forward name="loginPage" path="/WEB-INF/login/LoginPage.jsp"></forward>
+            <forward name="forgotPasswordPage" path="/WEB-INF/login/ForgotPasswordPage.jsp"></forward>
+            <forward name="changePasswordPage" path="/WEB-INF/login/ChangePassword.jsp"></forward>
+            <forward name="indexPage" path="/WEB-INF/login/IndexPage.jsp"></forward>
+        </action>
+
+        <!-- User Action -->
+        <action path="/UserAction" name="OnwardForm" type="com.onward.action.UserAction" scope="request" parameter="method" validate="false">
+            <forward name="userCreationPage" path="/WEB-INF/login/UserCreation.jsp"></forward>
+            <forward name="changePasswordPage" path="/WEB-INF/login/ChangePassword.jsp"></forward>
+            <forward name="userStatusModificationPage" path="/WEB-INF/login/UserStatusModification.jsp"></forward>
+            <forward name="indexPage" path="/WEB-INF/login/IndexPage.jsp"></forward>
+            <forward name="profileUpdationPage" path="/WEB-INF/login/ProfileUpdation.jsp"></forward>
+            <forward name="menuPrivilegesCreationPage" path="/WEB-INF/login/MenuPrivilegesCreation.jsp"></forward>
+        </action>
+
+           <!-- Pay Bills Action -->
+        <action path="/EmployeePayBillAction" name="OnwardForm" type="com.onward.action.EmployeePayBillAction" scope="request" parameter="method" validate="false">
+            <forward name="employeePayBillsPage" path="/WEB-INF/PayBills/PayBillPage.jsp"></forward>
+            <forward name="employeePayStructurePage" path="/WEB-INF/PayBills/EmployeePayStructurePage.jsp"></forward>
+            <forward name="employeeAttendancePage" path="/WEB-INF/PayBills/Attendance.jsp"></forward>
+            <forward name="leavelossofpayPage" path="/WEB-INF/PayBills/LLPEntryPage.jsp"></forward>
+            <forward name="miscTransactionDeductionPage" path="/WEB-INF/PayBills/MiscTransactionDeduction.jsp"></forward>            
+            <forward name="miscTransactionExcelDeductionPage" path="/WEB-INF/PayBills/MiscDeduction.jsp"></forward>            
+            <forward name="employeePayBillPrint" path="/WEB-INF/Reports/PayBillPrint.jsp"></forward>
+            <forward name="employeePayBillCashPrint" path="/WEB-INF/Reports/PayBillPrintCash.jsp"></forward>
+            <forward name="employeePayBillBankPrint" path="/WEB-INF/Reports/PayBillPrintBank.jsp"></forward>
+            <forward name="employeeAcquaintanceSlipPrint" path="/WEB-INF/Reports/AcquaintanceSlipPrint.jsp"></forward>
+            <forward name="employeeAcquaintanceSlipCashPrint" path="/WEB-INF/Reports/AcquaintanceSlipPrintCash.jsp"></forward>
+            <forward name="employeeAcquaintanceSlipBankPrint" path="/WEB-INF/Reports/AcquaintanceSlipPrintBank.jsp"></forward>
+            <forward name="employeeEarningsLedgerPrint" path="/WEB-INF/Reports/EarningsLedgerPrint.jsp"></forward>
+            <forward name="employeeDeductionLedgerPrint" path="/WEB-INF/Reports/DeductionLedgerPrint.jsp"></forward>
+            <forward name="employeeSalaryAbstractPrint" path="/WEB-INF/Reports/SalaryAbstractPrint.jsp"></forward>
+            <forward name="employeeSalaryAbstractCashPrint" path="/WEB-INF/Reports/SalaryAbstractCashPrint.jsp"></forward>
+            <forward name="employeeSalaryAbstractBankPrint" path="/WEB-INF/Reports/SalaryAbstractBankPrint.jsp"></forward>
+            <forward name="employeeEPFformPrint" path="/WEB-INF/Reports/EPFformPrint.jsp"></forward>
+            <forward name="employeeEPFformDBFPrint" path="/WEB-INF/Reports/EPFformDBFPrint.jsp"></forward>
+            <forward name="employeeLICSchedulePrint" path="/WEB-INF/Reports/LICSchedulePrint.jsp"></forward>
+            <forward name="employeeHBASchedulePrint" path="/WEB-INF/Reports/HBASchedulePrint.jsp"></forward>
+            <forward name="employeeHBAScheduleConsolidatedPrint" path="/WEB-INF/Reports/HBAScheduleConsolidatedPrint.jsp"></forward>
+            <forward name="employeeHBAInterestSchedulePrint" path="/WEB-INF/Reports/HBAInterestSchedulePrint.jsp"></forward>
+            <forward name="employeeVehicleAdvancePrint" path="/WEB-INF/Reports/VehicleAdvancePrint.jsp"></forward>
+            <forward name="employeePLISchedulePrint" path="/WEB-INF/Reports/PLISchedulePrint.jsp"></forward>
+            <forward name="employeeBankFloppyPrint" path="/WEB-INF/Reports/BankFloppyPrint.jsp"></forward>
+            <forward name="employeeBankTextPrint" path="/WEB-INF/Reports/BankTextPrint.jsp"></forward>
+            <forward name="employeeBankTextChequePrint" path="/WEB-INF/Reports/BankTextChequePrint.jsp"></forward>
+            <forward name="employeeDeductionAllPrint" path="/WEB-INF/Reports/DeductionAllPrint.jsp"></forward>
+            <forward name="downloadPaybillPage" path="/WEB-INF/PayBills/DownloadPaybillPage.jsp"></forward>
+            <forward name="employeeFestivalAdvancePrint" path="/WEB-INF/Reports/FestivalAdvance.jsp"></forward>
+            <forward name="employeeThrftSocietyPrint" path="/WEB-INF/Reports/ThrftSocietyPrint.jsp"></forward>
+            <forward name="employeeStorageLossPrint" path="/WEB-INF/Reports/StorageLossPrint.jsp"></forward>
+            <forward name="employeeDBFPrintpage" path="/WEB-INF/Reports/EmployeeDBFPrint.jsp"></forward>
+            <forward name="employeebonusdetailspage" path="/WEB-INF/PayBills/Employeebonusdetailspage.jsp"></forward>
+        </action>
+
+        <!-- User Type Creation -->
+        <action path="/UserTypeAction" name="OnwardForm" type="com.onward.action.UserTypeAction" scope="request" parameter="method" validate="false">
+            <forward name="userTypeCreationPage" path="/WEB-INF/login/UserTypeCreation.jsp"></forward>
+            <forward name="duplicatePayBillPage" path="/WEB-INF/Reports/DrawnPaySlip.jsp"></forward>
+            <forward name="lastPayCertificatePage" path="/WEB-INF/Reports/LPCPrint.jsp"></forward>
+            <forward name="failure" path="/WEB-INF/report/error.jsp"></forward>
+        </action>
+        
+             <!-- Employee Master Creation Action -->
+        <action path="/EmployeeMasterAction" name="OnwardForm" type="com.onward.action.EmployeeMasterAction" scope="request" parameter="method" validate="false">
+            <forward name="employeeMasterPage" path="/WEB-INF/masters/empMaster.jsp"></forward>
+            <forward name="employeeMasterDetailPage" path="/WEB-INF/masters/empMasterDetail.jsp"></forward>
+            <forward name="governmentEmpMasterPage" path="/WEB-INF/masters/GovernmentEmpMaster.jsp"></forward>
+            <forward name="changeEpfno" path="/WEB-INF/masters/ChangeEpfno.jsp"></forward>
+        </action>
+        
+         <!-- Master Creation Action -->
+        
+        <action path="/PayBillMasterAction" name="OnwardForm" type="com.onward.action.PayBillMasterAction" scope="request" parameter="method" validate="false">
+            <forward name="payCodeMasterPage" path="/WEB-INF/masters/PayCodeMaster.jsp"></forward>
+            <forward name="regionMasterPage" path="/WEB-INF/masters/RegionMaster.jsp"></forward>
+            <forward name="sectionMasterPage" path="/WEB-INF/masters/SectionMaster.jsp"></forward>
+            <forward name="designationMasterPage" path="/WEB-INF/masters/DesignationMaster.jsp"></forward>
+            <forward name="ccaAndHRAMasterPage" path="/WEB-INF/masters/CCAHRAMaster.jsp"></forward>
+            <forward name="stopPaymentPage" path="/WEB-INF/masters/stoppayment.jsp"></forward>
+            <forward name="employeeAccountAssignPage" path="/WEB-INF/masters/employeedeductionAccountcode.jsp"></forward>
+            <forward name="mastersUploadPage" path="/WEB-INF/masters/MastersUploadPage.jsp"></forward>
+            <forward name="slapDetailsPage" path="/WEB-INF/masters/EarningsSlapDetails.jsp"></forward>
+        </action>
+        
+         <!-- Employee Loan Action -->
+        <action path="/EmployeeLoansandAdvancesAction" name="OnwardForm" type="com.onward.action.EmployeeLoansandAdvancesAction" scope="request" parameter="method" validate="false">
+            <forward name="loansandAdvancesPage" path="/WEB-INF/PayBills/LoansandAdvances.jsp"></forward>
+            <forward name="transactionDeductionPage" path="/WEB-INF/PayBills/transactionDeductionPage.jsp"></forward>
+            <forward name="professionalTaxDeductionPage" path="/WEB-INF/PayBills/professionaltaxDeductionPage.jsp"></forward>
+        </action>
+
+        <!-- Employee Salary Deduction Others-->
+        <action path="/EmployeeSalaryDeductionOthers" name="OnwardForm" type="com.onward.action.SalaryDeductionOthersAction" scope="request" parameter="method" validate="false">
+            <forward name="transactionDeductionPage" path="/WEB-INF/PayBills/transactionDeductionPage.jsp"></forward>
+            <forward name="professionalTaxDeductionPage" path="/WEB-INF/PayBills/professionaltaxDeductionPage.jsp"></forward>
+        </action>
+
+         <!-- Employee Recovery Action -->
+        <action path="/EmployeeRecoveryAction" name="OnwardForm" type="com.onward.action.EmployeeRecoveryAction" scope="request" parameter="method" validate="false">
+            <forward name="revoceryPage" path="/WEB-INF/PayBills/EmployeeRecoveryPage.jsp"></forward>
+        </action>
+         <!-- Supplementary Bill Action-->
+        <action path="/SupplementaryBillAction" name="OnwardForm" type="com.onward.action.SupplementaryBillAction" scope="request" parameter="method" validate="false">
+            <forward name="supplementarybillPage" path="/WEB-INF/PayBills/supplementarybillPage.jsp"></forward>
+            <forward name="employeeSupplementaryBillPrint" path="/WEB-INF/ReportsforSupplementary/SupplementaryBillPrint.jsp"></forward>
+            <forward name="employeeSupplementaryAbstractPrint" path="/WEB-INF/ReportsforSupplementary/SupplementaryAbstractPrint.jsp"></forward>
+            <forward name="employeeSupplementaryEPFformPrint" path="/WEB-INF/ReportsforSupplementary/SupplementaryEPFformPrint.jsp"></forward>
+            <forward name="employeeSupplementaryEPFformDBFPrint" path="/WEB-INF/ReportsforSupplementary/SupplementaryEPFformDBFPrint.jsp"></forward>
+            <forward name="employeeSupplementaryDeductionAllPrint" path="/WEB-INF/ReportsforSupplementary/SupplementaryDeductionAllPrint.jsp"></forward>
+            <forward name="employeeSupplementaryLICSchedulePrint" path="/WEB-INF/ReportsforSupplementary/SupplementaryLICSchedulePrint.jsp"></forward>
+            <forward name="employeeSupplementaryPayDBFPrint" path="/WEB-INF/ReportsforSupplementary/SupplementaryPayDBFPrint.jsp"></forward>
+            <forward name="employeeSupplementaryDABillPrint" path="/WEB-INF/ReportsforSupplementary/SupplementaryDABillPrint.jsp"></forward>
+            <forward name="employeeSupplementaryDAAcquitanceCashPrint" path="/WEB-INF/ReportsforSupplementary/SupplementaryDAAcquitanceCash.jsp"></forward>
+            <forward name="employeeSupplementaryDAAcquitanceChequePrint" path="/WEB-INF/ReportsforSupplementary/SupplementaryDAAcquitanceCheque.jsp"></forward>
+            <forward name="employeeSupplementaryIncrementArrearPrint" path="/WEB-INF/ReportsforSupplementary/SupplementaryIncrementArrearPrint.jsp"></forward>
+            <forward name="employeeSupplementaryIncrementArrearAcquittancePrint" path="/WEB-INF/ReportsforSupplementary/SupplementaryIncrementArrearAcquitancePrint.jsp"></forward>
+            <forward name="employeeSupplementaryPaidDetailsPage" path="/WEB-INF/ReportsforSupplementary/SupplementaryPaidDetails.jsp"></forward>
+            <forward name="employeeSupplementaryAcquaintancePrint" path="/WEB-INF/ReportsforSupplementary/SupplementaryAcquaintancePrint.jsp"></forward>
+            <forward name="employeeSupplementaryIncrementArrearAbstractPrintpage" path="/WEB-INF/ReportsforSupplementary/SupplementaryIncrementArrearAbstractPrint.jsp"></forward>
+            <forward name="employeeSupplementaryEarningsLedgerPrintpage" path="/WEB-INF/ReportsforSupplementary/SupplementaryEarningsLedgerPrintpage.jsp"></forward>
+            <forward name="employeeSupplementaryDADBFPrintPage" path="/WEB-INF/ReportsforSupplementary/SupplementaryDADBFPrint.jsp"></forward>
+            <forward name="employeeSupplementaryDAAbstractPrintPage" path="/WEB-INF/ReportsforSupplementary/SupplementaryDAAbstractPrint.jsp"></forward>
+            <forward name="employeeSupplementaryDALedgerPrintPage" path="/WEB-INF/ReportsforSupplementary/SupplementaryDALedgerPrint.jsp"></forward>
+        </action>
+         <!-- Employee Transfer-->
+        <action path="/EmployeeTransferOutAction" name="OnwardForm" type="com.onward.action.EmployeeTransferOutAction" scope="request" parameter="method" validate="false">
+            <forward name="transferandpostingsPage" path="/WEB-INF/PayBills/EmployeeTransferPage.jsp"></forward>
+            <forward name="transferandpostingsUpdatePage" path="/WEB-INF/PayBills/EmployeeTransferIn.jsp"></forward>
+<!--            <forward name="transferandpostingsUpdatePage" path="/WEB-INF/PayBills/EmployeeTransferInPage.jsp"></forward>-->
+        </action>        
+
+        <!-- Employee FundSub -->
+        <action path="/EmployeeFundSubAction" name="OnwardForm" type="com.onward.action.EmployeeFundSubAction" scope="request" parameter="method" validate="false">
+            <forward name="employeeFundSubPage" path="/WEB-INF/PayBills/EmployeeFundSubPage.jsp"></forward>
+            <forward name="employeeFundSubEpfFormPrintPage" path="/WEB-INF/ReportsforFundsup/FundsupEPFformPrint.jsp"></forward>
+            <forward name="employeeFundSubEpfFormDBFPrintPage" path="/WEB-INF/ReportsforFundsup/FundsupEPFformDBFPrint.jsp"></forward>
+            <forward name="employeeFundSubEpfFormDownloadPrintPage" path="/WEB-INF/ReportsforFundsup/FundsupEPFformDownloadPrint.jsp"></forward>
+        </action>
+        <!-- Employee Earnings Slap  Details  -->
+        <action path="/EarningSlapDetailsAction" name="OnwardForm" type="com.onward.action.EarningSlapDetailsAction" scope="request" parameter="method" validate="false">
+            <forward name="slapDetailsPage" path="/WEB-INF/PayBills/EarningsSlapDetails.jsp"></forward>            
+            <forward name="stopProcessPage" path="/WEB-INF/PayBills/StopPayrollProcess.jsp"></forward>
+            <forward name="professionaltaxSlapPage" path="/WEB-INF/PayBills/ProfessionalSlapDetails.jsp"></forward>
+        </action>
+        
+          <!-- Pay Bills Processing Action -->
+        <action path="/PayBillProcessingAction" name="OnwardForm" type="com.onward.action.PayBillProcessingAction" scope="request" parameter="method" validate="false">
+            <forward name="billsProcessingPage" path="/WEB-INF/PayBills/PayBillProcessing.jsp"></forward>
+            <forward name="epfpreparation" path="/WEB-INF/PayBills/EPFPreparation.jsp"></forward>            
+        </action>
+
+	
+	<!-- Bonus Bill Action-->
+        <action path="/BonusBillAction" name="OnwardForm" type="com.onward.action.BonusBillAction" scope="request" parameter="method" validate="false">
+            <forward name="employeeBonusPDPPage" path="/WEB-INF/ReportforBonus/BonusPDPPrint.jsp"></forward>
+            <forward name="employeeBonusTransRetiredPDPPage" path="/WEB-INF/ReportforBonus/BonusPDPPrintTransRetired.jsp"></forward>            
+        </action>
+
+	<!-- Income Tax Action-->
+        <action path="/IncomeTaxAction" name="OnwardForm" type="com.onward.action.IncomeTaxAction" scope="request" parameter="method" validate="false">
+            <forward name="tentativePayReportPage" path="/WEB-INF/ReportsforIncometax/TentativePrint.jsp"></forward>
+            <forward name="incomeTaxReportPage" path="/WEB-INF/ReportsforIncometax/ITReport.jsp"></forward>
+        </action>
+
+        <!-- Accounts Action-->
+        <action path="/VoucherEntryAction" name="OnwardForm" type="com.onward.action.VoucherEntryAction" scope="request" parameter="method" validate="false">
+            <forward name="paymentVoucherEntryPage" path="/WEB-INF/Accounts/PaymentVoucherEntry.jsp"></forward>
+            <forward name="receiptVoucherEntryPage" path="/WEB-INF/Accounts/ReceiptVoucherEntry.jsp"></forward>
+            <forward name="journalVoucherEntryPage" path="/WEB-INF/Accounts/JournalVoucherEntry.jsp"></forward>
+            <forward name="paymentToBankPage" path="/WEB-INF/Accounts/BankPaymentVoucherEntry.jsp"></forward>
+            <forward name="receiptFromBankPage" path="/WEB-INF/Accounts/BankReceiptVoucherEntry.jsp"></forward>
+            <forward name="paymentVoucherModifyPage" path="/WEB-INF/AccountsModification/PaymentVoucherEntry.jsp"></forward>
+            <forward name="receiptVoucherModifyPage" path="/WEB-INF/AccountsModification/ReceiptVoucherEntry.jsp"></forward>
+            <forward name="journalVoucherModifyPage" path="/WEB-INF/AccountsModification/JournalVoucherEntry.jsp"></forward>
+            <forward name="bankEntriesModifyPage" path="/WEB-INF/AccountsModification/BankPaymentVoucherEntry.jsp"></forward>
+            <forward name="PaybillVoucherEntryPage" path="/WEB-INF/Accounts/PaybillVoucherEntry.jsp"></forward>
+            
+        </action>
+        
+        <action path="/AccountsReportsAction" name="OnwardForm" type="com.onward.action.AccountsReportsAction" scope="request" parameter="method" validate="false">
+            <forward name="ledgerViewPage" path="/WEB-INF/Accounts/LedgerViewPagenew.jsp"></forward>
+            <forward name="consolidatedLedgerViewPage" path="/WEB-INF/Accounts/ConsolidatedLedgerViewPage.jsp"></forward>
+            <forward name="ledgerViewRegionPage" path="/WEB-INF/Accounts/LedgerViewRegionPagenew.jsp"></forward>            
+            <forward name="trailBalanceViewPage" path="/WEB-INF/Accounts/TrialBalanceViewPage.jsp"></forward>   
+            <forward name="consolidatedTrailBalanceViewPage" path="/WEB-INF/Accounts/ConsolidatedTrialBalanceViewPage.jsp"></forward>               
+            <forward name="trailBalanceRegionViewPage" path="/WEB-INF/Accounts/TrialBalanceRegionViewPage.jsp"></forward>   
+            <forward name="partyLedgerReportPage" path="/WEB-INF/Accounts/PartyLedgerViewPage.jsp"></forward>   
+            <forward name="cashBookReportPage" path="/WEB-INF/Accounts/CashBookReportPage.jsp"></forward>
+            <forward name="cashBookReportRegionPage" path="/WEB-INF/Accounts/CashBookReportByRegionPage.jsp"></forward>            
+            <forward name="voucherreportpage" path="/WEB-INF/Accounts/VoucherReportPage.jsp"></forward>
+            <forward name="voucherreportRegionpage" path="/WEB-INF/Accounts/VoucherReportRegionPage.jsp"></forward>
+            <forward name="accountsVouchersDashboard" path="/WEB-INF/Accounts/AccountsVouchersDashboard.jsp"></forward>            
+            <forward name="journalreportpage" path="/WEB-INF/Accounts/JournalReportPage.jsp"></forward>
+            <forward name="bankreportpage" path="/WEB-INF/Accounts/BankReportPage.jsp"></forward>
+            <forward name="receiptreportpage" path="/WEB-INF/Accounts/ReceiptReportPage.jsp"></forward>
+            <forward name="purchasereportpage" path="/WEB-INF/Accounts/PurchaseReportPage.jsp"></forward>
+            <forward name="purchaseAbstractreportpage" path="/WEB-INF/Accounts/PurchaseAbstractReportPage.jsp"></forward>
+            <forward name="salesTaxreportpage" path="/WEB-INF/Accounts/SalesTaxReportPage.jsp"></forward>
+            <forward name="BankChallanreportpage" path="/WEB-INF/Accounts/BankChallanReportPage.jsp"></forward>
+            <forward name="purchasevatBreakupPage" path="/WEB-INF/Accounts/PurchaseVatBreakupReportPage.jsp"></forward>
+            <forward name="salesvatbreakupPage" path="/WEB-INF/Accounts/SalesVatBreakupReportPage.jsp"></forward>
+            <forward name="purchasevatAbstractPage" path="/WEB-INF/Accounts/PurchaseVatAbstractReportPage.jsp"></forward>
+            <forward name="salesvatAbstractPage" path="/WEB-INF/Accounts/SalesVatAbstractReportPage.jsp"></forward>
+            <forward name="ledgerSingleAccountHeadReportPage" path="/WEB-INF/Accounts/LedgerSingleAccountHead.jsp"></forward>
+            <forward name="receiptAccHeadWiseAbstractPage" path="/WEB-INF/Accounts/ReceiptAccHeadwiseAbstract.jsp"></forward>
+            <forward name="cashBookAbstractPage" path="/WEB-INF/Accounts/CashBookAbstract.jsp"></forward>
+            <forward name="failure" path="/WEB-INF/report/error.jsp"></forward>
+            <forward name="purchasevatExportPage" path="/WEB-INF/Accounts/PurchaseVatExportReportPage.jsp"></forward>
+            <forward name="salesvatExportPage" path="/WEB-INF/Accounts/SalesVatExportReportPage.jsp"></forward>
+            <forward name="receiptRealizationReportPage" path="/WEB-INF/Accounts/ReceiptRealizationReportPage.jsp"></forward>
+            <forward name="progressivetrailBalanceViewPage" path="/WEB-INF/Accounts/ProgressiveTrialBalanceViewPage.jsp"></forward>
+            <forward name="RealizationAbstractPage" path="/WEB-INF/Accounts/RealizationAbstract.jsp"></forward>
+        </action>
+
+
+        <action path="/RegionwiseReportAction" name="OnwardForm" type="com.onward.action.RegionwiseReportAction" scope="request" parameter="method" validate="false">
+            <forward name="EmployeeSchedulePage" path="/WEB-INF/RegionwiseReport/EmployeeSchedulePage.jsp"></forward>
+            <forward name="EarningsDetailsPage" path="/WEB-INF/RegionwiseReport/EarningsDetailsPage.jsp"></forward>
+            <forward name="ServiceRegisterVerificationPage" path="/WEB-INF/RegionwiseReport/ServiceRegisterVerificationPage.jsp"></forward>
+        </action>
+
+        
+        <!-- DAIncrementArrear Action-->
+        <action path="/DAIncrementArrearAction" name="OnwardForm" type="com.onward.action.DAIncrementArrearAction" scope="request" parameter="method" validate="false">
+            <forward name="DAIncrementArrearPage" path="/WEB-INF/PayBills/DAIncrementArrearPage.jsp"></forward>
+            <forward name="DAArrearBatchCreationPage" path="/WEB-INF/PayBills/DAArrearBatchCreationPage.jsp"></forward>
+            <forward name="DAIncrementArrearReprocessPage" path="/WEB-INF/PayBills/DAIncrementArrearReporces.jsp"></forward>
+            <forward name="DAIncrementArrearReprocessUpdatePage" path="/WEB-INF/PayBills/DAIncrementArrearReporcesUpdate.jsp"></forward>
+        </action>
+        <!-- Accounts Masters Action-->
+        <action path="/AccountsMastersAction" name="OnwardForm" type="com.onward.accounts.action.AccountsMastersAction" scope="request" parameter="method" validate="false">
+            <forward name="accountHeadMasterPage" path="/WEB-INF/Accounts/AccountHeadMasterPage.jsp"></forward>
+            <forward name="bankledgerMasterPage" path="/WEB-INF/Accounts/BankMaster.jsp"></forward>
+            <forward name="partyledgerMasterPage" path="/WEB-INF/Accounts/PartyLedgerMaster.jsp"></forward>
+            <forward name="accountsBookPage" path="/WEB-INF/Accounts/AccountsBookMaster.jsp"></forward>
+            <forward name="bankChallanPage" path="/WEB-INF/Accounts/BankChallanEntry.jsp"></forward>
+            <forward name="cashChallanPage" path="/WEB-INF/Accounts/CashChallanEntry.jsp"></forward>            
+        </action>
+        <action path="/CashierEntryAction" name="OnwardForm" type="com.onward.accounts.action.CashierEntryAction" scope="request" parameter="method" validate="false">
+            <forward name="cashierEntryPage" path="/WEB-INF/Accounts/CashierEntry.jsp"></forward>
+            <forward name="cashBookChangePage" path="/WEB-INF/Accounts/CashBookChangePage.jsp"></forward>
+            <forward name="voucherCancellationPage" path="/WEB-INF/Accounts/VoucherCancellationPage.jsp"></forward>
+            <forward name="paymentRealizationEntryPage" path="/WEB-INF/Accounts/PaymentRealizationEntryPage.jsp"></forward>
+            <forward name="receiptRealizationEntryPage" path="/WEB-INF/Accounts/ReceiptRealizationEntryPage.jsp"></forward>
+            <forward name="remittanceEntryPage" path="/WEB-INF/Accounts/RemittanceUpdateJsp.jsp"></forward>
+            <forward name="adminremittanceEntryPage" path="/WEB-INF/Accounts/AdminRemittanceEntry.jsp"></forward>
+            <forward name="chequeRegisterPage" path="/WEB-INF/Accounts/ChequeRegister.jsp"></forward>
+            <forward name="voucherDateNoChangePage" path="/WEB-INF/Accounts/PaymentVoucherNumberDateChange.jsp"></forward>
+            <forward name="interRegionSuspenseReconcilationPage" path="/WEB-INF/Accounts/IRSReconPage.jsp"></forward>
+            <forward name="interRegionSuspenseReconciledPage" path="/WEB-INF/Accounts/IRSReconciledPage.jsp"></forward>
+            <forward name="paymentRealizationAbstractEntryPage" path="/WEB-INF/Accounts/PaymentRealizationAbstractEntryPage.jsp"></forward>
+        </action>
+        
+        <action path="/TaxAction" name="OnwardForm" type="com.onward.accounts.action.TaxAction" scope="request" parameter="method" validate="false">
+            <forward name="purchaseTaxPage" path="/WEB-INF/Tax/PurchaseTaxPage.jsp"></forward>
+            <forward name="salesTaxPage" path="/WEB-INF/Tax/SalesTaxPage.jsp"></forward>            
+            <forward name="cstTaxPage" path="/WEB-INF/Tax/CstTaxPage.jsp"></forward>
+        </action>
+        <action path="/EPFTransactionAction" name="OnwardForm" type="com.onward.epf.action.EPFTransactionAction" scope="request" parameter="method" validate="false">
+            <forward name="epftransactionPage" path="/WEB-INF/Epf/FundsSupManual.jsp"></forward>
+        </action>
+        
+        <action path="/EPFLoanAction" name="OnwardForm" type="com.onward.epf.action.EPFLoanAction" scope="request" parameter="method" validate="false">
+            <forward name="loanapplicationreceiptpage" path="/WEB-INF/Epf/LoanApplicationReceiptPage.jsp"></forward>
+            <forward name="loanworkingsheetpage" path="/WEB-INF/Epf/LoanWorkingSheet.jsp"></forward>
+            <forward name="loanapprovalpage" path="/WEB-INF/Epf/LoanApplicationApproval.jsp"></forward>
+            <forward name="loanvoucherpreparation" path="/WEB-INF/Epf/VoucherPreparation.jsp"></forward>
+            <forward name="finalsettlementworkingsheetpage" path="/WEB-INF/Epf/FinalSettlementWorkingSheet.jsp"></forward>
+            <forward name="loanaccountslippage" path="/WEB-INF/Epf/LoanAccountSlip.jsp"></forward>
+            <forward name="loanchecklistpage" path="/WEB-INF/Epf/EPFCheckList.jsp"></forward>
+        </action>
+
+        <action path="/EDLIAction" name="OnwardForm" type="com.onward.edli.action.EDLIAction" scope="request" parameter="method" validate="false">
+            <forward name="edliReportPage" path="/WEB-INF/EDLI/EDLIReportPage.jsp"></forward>
+            <forward name="empRetirementDetailsPage" path="/WEB-INF/EDLI/EmployeeRetirementDetails.jsp"></forward>
+            <forward name="empAppointmentDetailsPage" path="/WEB-INF/EDLI/EmployeeAppointmentDetails.jsp"></forward>
+            <forward name="regionwiseEmpDetailsPage" path="/WEB-INF/EDLI/RegionwiseEmployees.jsp"></forward>
+            <forward name="edliEmployeeReportPage" path="/WEB-INF/EDLI/EDLIEmployeeReportPage.jsp"></forward>
+            <forward name="edliEmployeeEarningsReportPage" path="/WEB-INF/EDLI/EDLIEmployeeEarningsReportPage.jsp"></forward>
+        </action>
+
+        <action path="/BudgetAction" name="OnwardForm" type="com.onward.budget.action.BudgetAction" scope="request" parameter="method" validate="false">
+            <forward name="budgetRevisionEntry" path="/WEB-INF/Budget/BudgetpProbableEntry.jsp"></forward>
+            <forward name="budgetRevisionEntryHo" path="/WEB-INF/Budget/BudgetRevisionEntry.jsp"></forward>
+            <forward name="budgetUploadPage" path="/WEB-INF/Budget/BudgetUploadPage.jsp"></forward>
+            <forward name="budgetReportPage" path="/WEB-INF/Budget/BudgetReportPage.jsp"></forward>
+            <forward name="proposesSalaryExpenses" path="/WEB-INF/Budget/ProposedSalaryExpenses.jsp"></forward>
+            <forward name="budgetReportHOPage" path="/WEB-INF/Budget/BudgetReportPageHO.jsp"></forward>
+            <forward name="budgetRegionReportPage" path="/WEB-INF/Budget/BudgetReportRegionPage.jsp"></forward>
+            <forward name="budgetschedulereportPage" path="/WEB-INF/Budget/BudgetScheduleReport.jsp"></forward>
+            <forward name="BudgetUpdateStatusPage" path="/WEB-INF/Budget/BudgetControlPage.jsp"></forward>
+            <forward name="budgetMonthlyEntryPage" path="/WEB-INF/Budget/MonthlyExpenditureDetails.jsp"></forward>
+            <forward name="ControlofExpenditureReportPage" path="/WEB-INF/Budget/ControlofExpenditureReport.jsp"></forward>
+            <forward name="fmaProbableEntryPage" path="/WEB-INF/Budget/BudgetFMAProbableEntry.jsp"></forward>
+            <forward name="ControlofExpenditureAccountHeadReportPage" path="/WEB-INF/Budget/ControlofExpenditureAccountReport.jsp"></forward>
+            <forward name="fmaHORevisionEntryPage" path="/WEB-INF/Budget/BudgetFMARevisionEntry.jsp"></forward>
+            <forward name="budgetFMAReportPage" path="/WEB-INF/Budget/BudgetFMAReportPage.jsp"></forward>
+            <forward name="controlOfExpenditureBoard" path="/WEB-INF/Budget/ControlofExpenditureBoard.jsp"></forward>
+        </action>
+        <!-- File Upload Action -->
+        <action path="/FileUploadAction" name="OnwardForm" type="com.onward.budget.action.FileUploadAction" scope="request" parameter="method" validate="false">
+            <forward name="fileUploadPage" path="/WEB-INF/Transactions/FileUpload.jsp"></forward>
+        </action>
+        
+        <action path="/BankEntryAction" name="OnwardForm" type="com.onward.accounts.action.BankEntryAction" scope="request" parameter="method" validate="false">
+            <forward name="bankReconciliationUploadPage" path="/WEB-INF/Accounts/BankReconciliationUploadPage.jsp"></forward>
+        </action>
+        
+        <action path="/BRSAction" name="OnwardForm" type="com.onward.accounts.action.BRSAction" scope="request" parameter="method" validate="false">
+            <forward name="bankReconciliationUploadPage" path="/WEB-INF/BRS/BankReconciliationUploadPage.jsp"></forward>
+            <forward name="brsCheckListPage" path="/WEB-INF/BRS/BRSCheckListPage.jsp"></forward>
+            <forward name="brsReportPage" path="/WEB-INF/BRS/BRSReportPage.jsp"></forward>
+            <forward name="brsDetailsPage" path="/WEB-INF/BRS/brsDetailsPage.jsp"></forward>
+        </action>
+        
+    </action-mappings>
+    
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+    
+    <message-resources parameter="com/myapp/struts/ApplicationResource"/>
+    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+<!--    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>-->
+    <plug-in className="com.onward.plugin.ApplicationPlugin"></plug-in>
+</struts-config>

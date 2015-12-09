@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Payscalemaster" table="payscalemaster" schema="public">
+        <id name="payscalecode" type="string">
+            <column name="payscalecode" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="payscaledescription" type="string">
+            <column name="payscaledescription" length="50" />
+        </property>
+        <property name="basicpay" type="big_decimal">
+            <column name="basicpay" precision="8" />
+        </property>
+        <property name="annualincrement" type="big_decimal">
+            <column name="annualincrement" precision="8" />
+        </property>
+        <property name="finalbasicpay" type="big_decimal">
+            <column name="finalbasicpay" precision="8" />
+        </property>
+        <property name="periodfrom" type="date">
+            <column name="periodfrom" length="13" />
+        </property>
+        <property name="periodto" type="date">
+            <column name="periodto" length="13" />
+        </property>
+        <property name="empearningscode" type="string">
+            <column name="empearningscode" length="10" />
+        </property>
+        <property name="empdeductionscode" type="string">
+            <column name="empdeductionscode" length="10" />
+        </property>
+        <property name="synchronized_" type="java.lang.Boolean">
+            <column name="synchronized" />
+        </property>
+        <property name="accregion" type="string">
+            <column name="accregion" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Employeeprovidentfundothers" table="employeeprovidentfundothers" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="100" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="employeemaster" class="com.onward.persistence.payroll.Employeemaster" fetch="select">
+            <column name="epfno" length="25" />
+        </many-to-one>
+        <property name="month" type="java.lang.Integer">
+            <column name="month" />
+        </property>
+        <property name="year" type="java.lang.Integer">
+            <column name="year" />
+        </property>
+        <property name="salary" type="big_decimal">
+            <column name="salary" precision="25" />
+        </property>
+        <property name="epfwhole" type="big_decimal">
+            <column name="epfwhole" precision="25" />
+        </property>
+        <property name="fbf" type="big_decimal">
+            <column name="fbf" precision="25" />
+        </property>
+        <property name="rl" type="big_decimal">
+            <column name="rl" precision="25" />
+        </property>
+        <property name="vpf" type="big_decimal">
+            <column name="vpf" precision="25" />
+        </property>
+        <property name="dvpf" type="big_decimal">
+            <column name="dvpf" precision="25" />
+        </property>
+        <property name="ecpf" type="big_decimal">
+            <column name="ecpf" precision="25" />
+        </property>
+        <property name="ecfb" type="big_decimal">
+            <column name="ecfb" precision="25" />
+        </property>
+        <property name="nrl" type="big_decimal">
+            <column name="nrl" precision="25" />
+        </property>
+        <property name="subs" type="big_decimal">
+            <column name="subs" precision="25" />
+        </property>
+        <property name="contributions" type="big_decimal">
+            <column name="contributions" precision="25" />
+        </property>
+        <property name="empcategory" type="string">
+            <column name="empcategory" length="5">
+                <comment>R - Regular S - Seasonal L - Load Man</comment>
+            </column>
+        </property>
+        <property name="payrollcategory" type="string">
+            <column name="payrollcategory" length="5">
+                <comment>R - Regular S - Supplementary F - Fund Sub</comment>
+            </column>
+        </property>
+        <property name="cancelled" type="java.lang.Boolean">
+            <column name="cancelled" />
+        </property>
+        <property name="smonth" type="java.lang.Integer">
+            <column name="smonth" />
+        </property>
+        <property name="syear" type="java.lang.Integer">
+            <column name="syear" />
+        </property>
+        <property name="accregion" type="string">
+            <column name="accregion" length="50" />
+        </property>
+        <property name="supprocessid" type="string">
+            <column name="supprocessid" length="100" />
+        </property>
+        <property name="regprocessid" type="string">
+            <column name="regprocessid" length="100" />
+        </property>
+        <property name="createddate" type="date">
+            <column name="createddate" length="13" />
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

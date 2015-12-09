@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Ledgermaster" table="ledgermaster" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="100" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="ledgergroupmaster" class="com.onward.persistence.payroll.Ledgergroupmaster" fetch="select">
+            <column name="ledgergroupid" length="100" />
+        </many-to-one>
+        <property name="ledgername" type="string">
+            <column name="ledgername" length="250" />
+        </property>
+        <property name="grouporder" type="string">
+            <column name="grouporder" />
+        </property>
+        <property name="b5" type="boolean">
+            <column name="b5" not-null="true" />
+        </property>
+        <property name="b6" type="boolean">
+            <column name="b6" not-null="true" />
+        </property>
+        <property name="b7" type="boolean">
+            <column name="b7" not-null="true" />
+        </property>
+        <property name="b8" type="boolean">
+            <column name="b8" not-null="true" />
+        </property>
+        <set name="budgetdetailses" inverse="true">
+            <key>
+                <column name="ledgermaster" length="100" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Budgetdetails" />
+        </set>
+        <set name="monthlyexpendituredetailses" inverse="true">
+            <key>
+                <column name="ledgermaster" length="100" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Monthlyexpendituredetails" />
+        </set>
+        <set name="accountsheadses" inverse="true">
+            <key>
+                <column name="ledgercode" length="100" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Accountsheads" />
+        </set>
+    </class>
+</hibernate-mapping>

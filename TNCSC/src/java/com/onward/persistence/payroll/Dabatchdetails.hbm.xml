@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Dabatchdetails" table="dabatchdetails" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="100" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="daarrear" class="com.onward.persistence.payroll.Daarrear" fetch="select">
+            <column name="daarrear" length="100" />
+        </many-to-one>
+        <many-to-one name="regionmaster" class="com.onward.persistence.payroll.Regionmaster" fetch="select">
+            <column name="accregion" length="5" />
+        </many-to-one>
+        <property name="daname" type="string">
+            <column name="daname" length="150" />
+        </property>
+        <property name="active" type="java.lang.Boolean">
+            <column name="active" />
+        </property>
+        <property name="cancelled" type="java.lang.Boolean">
+            <column name="cancelled" />
+        </property>
+        <set name="supplementatypaybills" inverse="true">
+            <key>
+                <column name="dabatch" length="100" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Supplementatypaybill" />
+        </set>
+    </class>
+</hibernate-mapping>

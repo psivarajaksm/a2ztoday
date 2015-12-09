@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Epfopeningbalance" table="epfopeningbalance" schema="public">
+        <id name="id" type="long">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="employeeepfmaster" class="com.onward.persistence.payroll.Employeeepfmaster" fetch="select">
+            <column name="epfno" length="25" />
+        </many-to-one>
+        <many-to-one name="accountingyear" class="com.onward.persistence.payroll.Accountingyear" fetch="select">
+            <column name="accountingyear" length="100" />
+        </many-to-one>
+        <property name="subscriptionOb" type="big_decimal">
+            <column name="subscription_ob" precision="25" />
+        </property>
+        <property name="contributionOb" type="big_decimal">
+            <column name="contribution_ob" precision="25" />
+        </property>
+        <property name="loanbalance" type="big_decimal">
+            <column name="loanbalance" precision="25" />
+        </property>
+    </class>
+</hibernate-mapping>

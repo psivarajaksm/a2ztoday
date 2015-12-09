@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Professionaltaxslap" table="professionaltaxslap" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="regioncode" type="string">
+            <column name="regioncode" length="50" not-null="true" />
+        </property>
+        <property name="periodfrom" type="date">
+            <column name="periodfrom" length="13" />
+        </property>
+        <property name="periodto" type="date">
+            <column name="periodto" length="13" />
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="25" />
+        </property>
+        <property name="orderno" type="string">
+            <column name="orderno" length="50" />
+        </property>
+        <property name="amountrangefrom" type="big_decimal">
+            <column name="amountrangefrom" precision="25" />
+        </property>
+        <property name="amountrangeto" type="big_decimal">
+            <column name="amountrangeto" precision="25" />
+        </property>
+        <property name="percentage" type="big_decimal">
+            <column name="percentage" precision="5" />
+        </property>
+        <property name="synchronized_" type="java.lang.Boolean">
+            <column name="synchronized" />
+        </property>
+        <property name="cancelled" type="java.lang.Boolean">
+            <column name="cancelled" />
+        </property>
+        <property name="deductioncode" type="string">
+            <column name="deductioncode" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

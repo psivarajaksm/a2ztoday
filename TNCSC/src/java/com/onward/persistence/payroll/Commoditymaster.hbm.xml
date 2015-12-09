@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Commoditymaster" table="commoditymaster" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="100" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="100" />
+        </property>
+        <property name="vatpercentage" type="big_decimal">
+            <column name="vatpercentage" precision="5" />
+        </property>
+        <property name="code" type="string">
+            <column name="code" length="25" />
+        </property>
+        <property name="commodityorder" type="java.lang.Integer">
+            <column name="commodityorder" />
+        </property>
+        <property name="commoditytype" type="string">
+            <column name="commoditytype" length="20" />
+        </property>
+        <property name="vatsales" type="java.lang.Boolean">
+            <column name="vatsales" />
+        </property>
+        <property name="vatpurchase" type="java.lang.Boolean">
+            <column name="vatpurchase" />
+        </property>
+        <property name="ismodimyonpurchase" type="java.lang.Boolean">
+            <column name="ismodimyonpurchase" />
+        </property>
+        <property name="rate" type="big_decimal">
+            <column name="rate" precision="10" />
+        </property>
+        <set name="vatonpurchases" inverse="true">
+            <key>
+                <column name="commodity" length="100" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Vatonpurchase" />
+        </set>
+        <set name="vatonsaleses" inverse="true">
+            <key>
+                <column name="commodity" length="100" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Vatonsales" />
+        </set>
+    </class>
+</hibernate-mapping>

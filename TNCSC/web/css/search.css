@@ -1,0 +1,239 @@
+body{
+    margin:0;
+    padding: 0;   
+    background:#DEEFFD;
+    /*background-color:#e9e9e9;*/
+    background-repeat: repeat;
+    margin-left: 0%;
+    margin-top: 0%;
+    margin-right: 0%;
+    margin-bottom: 0%;
+    font-family:Geneva, Arial, Helvetica, sans-serif;
+    font-size:10px;	
+}
+.headerpart{
+    margin-top:0px;
+    width:100%;
+    height:90px;
+    background:url(../images/bgheader.jpg) repeat-x;	
+}
+.headerparttit{
+    height:90px;
+    width:640px;
+    background:url(../images/pulavendaran.jpg) no-repeat;
+    float:left;
+}
+.headerpartadj{
+    height:90px;
+    width:100%;	
+    /*background-color:#FFFFFF;*/
+}
+.bodypart{
+    width:100%;
+    height:470px;
+    background-color:#deeffd;
+    border: 3px solid #eff137;
+}
+.footerpart{
+    width:100%;
+    height:40px;
+    background:#014f6d;
+}
+.seatable{
+    font-family:Georgia, "Times New Roman", Times, serif;
+    font-size:12px;
+    font-weight:bold;
+    color:#014f6d;
+}
+.seatable td{
+    height:30px;
+}
+.bodypartheader{
+    padding:0 0 0 10px;
+}
+.seatop{
+    color:#ee1d36;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    font-size:14px;
+    width:740px;
+    border-bottom:2px solid #CCCCCC;
+    line-height:30px;
+}
+.comboClass{
+    background-color:#e4e4e4;
+    width:175px;
+    border:1px solid #014f6d;
+}
+.buttonClass{
+    background-color:#014f6d;
+    color:#FFFFFF;
+    font-weight:bold;
+}
+.searchgrid{
+    padding:10px 0 0 30px;
+    font-size:12px;
+    font-family:Tahoma;
+}
+.searchgridtable{
+    border:1px solid #014f6d;				
+}
+.searchgridtableheader{
+    background-color:#014f6d;
+    color:#FFFFFF;
+    height:30px;
+    text-indent:5px;
+}
+.searchlightrow{
+    background-color:#fff0fb;
+    height:25px;
+    text-indent:5px;
+}
+.searchdarkrow{
+    background-color:#ffffff;
+    height:25px;
+    text-indent:5px;
+}
+.scrolling {
+    /**allow ample width for table, padding and borders**/
+    width: auto;
+    /**adjust as needed. If no height is declared, scrollbar won't appear**/
+    height: 250px;
+    /**vertical scrollbar**/
+    overflow-y:scroll;
+}
+#loadingDiv{
+    width: 100px;
+    height: 100px;
+    padding-left:310px;
+}
+
+.mainDiv{
+    height:auto;
+    width:950px;
+    background-color:#ffffff;
+    margin:0 auto;
+    border:1px solid #CCCCCC;
+}
+.headerDiv{
+    height:130px;
+    width: 950px;    
+    background: url(../images/pulavendaran.jpg) no-repeat;
+}
+/*.headerDivleft{
+    height:90px;
+    width:640px;
+    background:url(../images/pulavendaran.jpg) no-repeat;
+    float:left;	
+}
+.headerDivright{
+    height:90px;
+    width:310px;
+    float:left;
+}*/
+.marque{
+    width: 950px;
+    height: 25px;
+    background: url(../images/marqu.jpg) repeat-x;
+}
+.bodyDiv{
+    height:600px;
+    width:100%;
+}
+.loginDiv{
+    margin-top:20px;
+    margin-right:20px;
+    height:250px;
+    width:auto;
+    float:right;
+    background:url(../images/loginbody.jpg) repeat-y;
+}
+.footerDiv{
+    background:#014058;
+    height:60px;
+    width:100%;
+}
+.loginTable{
+    /*border:1px solid #0a83ae;*/
+    font:Tahoma;
+    font-size:12px;
+    color:#0a6f91;
+}
+.loginTable td{
+    height:30px;
+    text-indent:5px;
+}
+.findUsername{
+    font-size:12px;
+    font-family:Tahoma;
+    color:#de4095;                
+    font-weight:bold;
+    text-decoration: none;
+}
+.loginDivtop{
+    width:310px;
+    height:40px;
+    background:url(../images/logintop.jpg) no-repeat;
+
+}
+.loginDivbody{
+    width:310px;
+    height:192px;
+}
+.loginDivbottom{
+    width:310px;
+    height:18px;
+    background:url(../images/loginbottom.jpg) no-repeat;
+}
+.loginTxtBox{
+    border:1px solid #0c87b1;
+    font-family:Tahoma;
+    font-size:12px;
+    background:#e3e3e3;
+    color:#053444;
+    height:20px;
+    width: 150px;
+}
+
+.loginButtonBox{
+    background-color:#0c87b1;
+    border:2px solid #096382;
+    font-family:Tahoma;
+    font-size:12px;
+    color:#ffffff;
+    height:22px;
+    font-weight:bold;
+    background-position: center;
+}
+
+.errorLogin{
+    font-weight:bold;
+    color:#ee1d36;				
+}
+
+.footerDivreserved{
+    float:left;
+    padding-top:20px;
+    width:784px;
+    color:#F6F857;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:11px;
+    font-weight:bold;
+    text-indent:250px;
+}
+
+.footerDivPoweredby{
+    float:left;
+    padding-top:20px;
+    width:80px;
+    color:#DDEFFD;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-weight:bold;				
+}
+
+.footerDivImg{
+    float:right;
+    width:86px;
+    padding-top:15px;
+}

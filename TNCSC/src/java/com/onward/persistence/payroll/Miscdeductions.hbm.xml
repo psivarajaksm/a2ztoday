@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Miscdeductions" table="miscdeductions" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="employeemaster" class="com.onward.persistence.payroll.Employeemaster" fetch="select">
+            <column name="employeeprovidentfundnumber" length="25" />
+        </many-to-one>
+        <property name="year" type="java.lang.Integer">
+            <column name="year" />
+        </property>
+        <property name="month" type="java.lang.Integer">
+            <column name="month" />
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="25" />
+        </property>
+        <property name="deductionscode" type="string">
+            <column name="deductionscode" length="25" />
+        </property>
+        <property name="synchronized_" type="java.lang.Boolean">
+            <column name="synchronized" />
+        </property>
+        <property name="accregion" type="string">
+            <column name="accregion" length="50" />
+        </property>
+        <property name="deductionaccountcode" type="string">
+            <column name="deductionaccountcode" length="50" />
+        </property>
+        <property name="createddate" type="date">
+            <column name="createddate" length="13" />
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

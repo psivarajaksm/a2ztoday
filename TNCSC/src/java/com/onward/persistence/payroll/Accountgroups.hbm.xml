@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Accountgroups" table="accountgroups" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="100" />
+            <generator class="assigned" />
+        </id>
+        <property name="grpcode" type="string">
+            <column name="grpcode" length="10" />
+        </property>
+        <property name="facode" type="string">
+            <column name="facode" length="10" />
+        </property>
+        <property name="groupname" type="string">
+            <column name="groupname" length="100" />
+        </property>
+        <property name="orderno" type="string">
+            <column name="orderno" length="100" />
+        </property>
+        <property name="accheadstartingno" type="java.lang.Long">
+            <column name="accheadstartingno" />
+        </property>
+        <property name="accheadendingno" type="java.lang.Long">
+            <column name="accheadendingno" />
+        </property>
+        <property name="accheadrunningno" type="java.lang.Long">
+            <column name="accheadrunningno" />
+        </property>
+        <set name="accountsheadses" inverse="true">
+            <key>
+                <column name="groupcode" length="100" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Accountsheads" />
+        </set>
+    </class>
+</hibernate-mapping>

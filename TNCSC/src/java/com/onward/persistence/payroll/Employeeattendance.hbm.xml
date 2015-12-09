@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Employeeattendance" table="employeeattendance" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="employeemaster" class="com.onward.persistence.payroll.Employeemaster" fetch="select">
+            <column name="employeeprovidentfundnumber" length="25" />
+        </many-to-one>
+        <property name="year" type="java.lang.Integer">
+            <column name="year" />
+        </property>
+        <property name="month" type="java.lang.Integer">
+            <column name="month" />
+        </property>
+        <property name="present" type="java.lang.Integer">
+            <column name="present" />
+        </property>
+        <property name="woff" type="java.lang.Integer">
+            <column name="woff" />
+        </property>
+        <property name="eldays" type="java.lang.Integer">
+            <column name="eldays" />
+        </property>
+        <property name="mldays" type="java.lang.Integer">
+            <column name="mldays" />
+        </property>
+        <property name="cldays" type="java.lang.Integer">
+            <column name="cldays" />
+        </property>
+        <property name="mdays" type="java.lang.Integer">
+            <column name="mdays" />
+        </property>
+        <property name="suspsdays" type="java.lang.Integer">
+            <column name="suspsdays" />
+        </property>
+        <property name="others" type="java.lang.Integer">
+            <column name="others" />
+        </property>
+        <property name="llp" type="java.lang.Integer">
+            <column name="llp" />
+        </property>
+        <property name="uelp" type="java.lang.Integer">
+            <column name="uelp" />
+        </property>
+        <property name="totdays" type="java.lang.Integer">
+            <column name="totdays" />
+        </property>
+        <property name="synchronized_" type="java.lang.Boolean">
+            <column name="synchronized" />
+        </property>
+        <property name="accregion" type="string">
+            <column name="accregion" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

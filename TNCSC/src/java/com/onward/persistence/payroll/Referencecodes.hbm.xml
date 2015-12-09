@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Referencecodes" table="referencecodes" schema="public">
+        <composite-id name="id" class="com.onward.persistence.payroll.ReferencecodesId">
+            <key-property name="parentcode" type="string">
+                <column name="parentcode" length="12" />
+            </key-property>
+            <key-property name="childcode" type="string">
+                <column name="childcode" length="12" />
+            </key-property>
+        </composite-id>
+        <property name="description" type="string">
+            <column name="description" length="1000" />
+        </property>
+        <property name="childof" type="string">
+            <column name="childof" length="12" />
+        </property>
+        <property name="isuserdriven" type="string">
+            <column name="isuserdriven" length="5" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Menuprivilages" table="menuprivilages" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="100" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="usertype" class="com.onward.persistence.payroll.Usertype" fetch="select">
+            <column name="usertype" not-null="true" />
+        </many-to-one>
+        <many-to-one name="menumaster" class="com.onward.persistence.payroll.Menumaster" fetch="select">
+            <column name="menumaster" not-null="true" />
+        </many-to-one>
+        <property name="accessright" type="java.lang.Boolean">
+            <column name="accessright" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Accountingserialno" table="accountingserialno" schema="public">
+        <composite-id name="id" class="com.onward.persistence.payroll.AccountingserialnoId">
+            <key-property name="id" type="string">
+                <column name="id" length="5" />
+            </key-property>
+            <key-property name="accountingyearid" type="string">
+                <column name="accountingyearid" length="100" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="accountingyear" class="com.onward.persistence.payroll.Accountingyear" update="false" insert="false" fetch="select">
+            <column name="accountingyearid" length="100" not-null="true" />
+        </many-to-one>
+        <property name="regionname" type="string">
+            <column name="regionname" length="100" />
+        </property>
+        <property name="employeeearningsslno" type="java.lang.Long">
+            <column name="employeeearningsslno" />
+        </property>
+        <property name="employeeearningdetailsslno" type="java.lang.Long">
+            <column name="employeeearningdetailsslno" />
+        </property>
+        <property name="payrollprocessingdetailsid" type="java.lang.Long">
+            <column name="payrollprocessingdetailsid" />
+        </property>
+        <property name="employeedeductionstransactionsid" type="java.lang.Long">
+            <column name="employeedeductionstransactionsid" />
+        </property>
+        <property name="employeeearningstransactionsid" type="java.lang.Long">
+            <column name="employeeearningstransactionsid" />
+        </property>
+        <property name="employeedeductionsslno" type="java.lang.Long">
+            <column name="employeedeductionsslno" />
+        </property>
+        <property name="employeedeductiondetailsslno" type="java.lang.Long">
+            <column name="employeedeductiondetailsslno" />
+        </property>
+        <property name="employeeattendanceid" type="java.lang.Long">
+            <column name="employeeattendanceid" />
+        </property>
+        <property name="employeeloansandadvancesid" type="java.lang.Long">
+            <column name="employeeloansandadvancesid" />
+        </property>
+        <property name="employeeloansandadvancesdetailsid" type="java.lang.Long">
+            <column name="employeeloansandadvancesdetailsid" />
+        </property>
+        <property name="employeerecoveriesid" type="java.lang.Long">
+            <column name="employeerecoveriesid" />
+        </property>
+        <property name="employeerecoverydetailsid" type="java.lang.Long">
+            <column name="employeerecoverydetailsid" />
+        </property>
+        <property name="salarystructureactualid" type="java.lang.Long">
+            <column name="salarystructureactualid" />
+        </property>
+        <property name="employeedeductiondetailsactualid" type="java.lang.Long">
+            <column name="employeedeductiondetailsactualid" />
+        </property>
+        <property name="employeeearningsdetailsactualid" type="java.lang.Long">
+            <column name="employeeearningsdetailsactualid" />
+        </property>
+        <property name="payrollprocessingid" type="java.lang.Long">
+            <column name="payrollprocessingid" />
+        </property>
+        <property name="salarystructureid" type="java.lang.Long">
+            <column name="salarystructureid" />
+        </property>
+        <property name="miscdeductionsid" type="java.lang.Long">
+            <column name="miscdeductionsid" />
+        </property>
+        <property name="earningslapdetailsid" type="java.lang.Long">
+            <column name="earningslapdetailsid" />
+        </property>
+        <property name="synchronized_" type="java.lang.Boolean">
+            <column name="synchronized" />
+        </property>
+        <property name="salarydeductionothersid" type="java.lang.Long">
+            <column name="salarydeductionothersid" />
+        </property>
+        <property name="supplementatypaybillid" type="java.lang.Long">
+            <column name="supplementatypaybillid" />
+        </property>
+        <property name="supplementarypayrollprocessingdetailsid" type="java.lang.Long">
+            <column name="supplementarypayrollprocessingdetailsid" />
+        </property>
+        <property name="supplementaryemployeeearningstransactionsid" type="java.lang.Long">
+            <column name="supplementaryemployeeearningstransactionsid" />
+        </property>
+        <property name="supplementaryemployeedeductionstransactionsid" type="java.lang.Long">
+            <column name="supplementaryemployeedeductionstransactionsid" />
+        </property>
+        <property name="supplementarysalarystructureid" type="java.lang.Long">
+            <column name="supplementarysalarystructureid" />
+        </property>
+        <property name="supplementaryemployeeearningsdetailsid" type="java.lang.Long">
+            <column name="supplementaryemployeeearningsdetailsid" />
+        </property>
+        <property name="supplementaryemployeedeductiondetailsid" type="java.lang.Long">
+            <column name="supplementaryemployeedeductiondetailsid" />
+        </property>
+        <property name="supplementaryemployeeloansandadvancesdetailsid" type="java.lang.Long">
+            <column name="supplementaryemployeeloansandadvancesdetailsid" />
+        </property>
+        <property name="employeeprovidentfundothersid" type="java.lang.Long">
+            <column name="employeeprovidentfundothersid" />
+        </property>
+        <property name="employeedeductionaccountcodeid" type="java.lang.Long">
+            <column name="employeedeductionaccountcodeid" />
+        </property>
+        <property name="incrementarrearreferenceid" type="java.lang.Long">
+            <column name="incrementarrearreferenceid" />
+        </property>
+        <property name="paymentvoucherid" type="java.lang.Long">
+            <column name="paymentvoucherid" />
+        </property>
+        <property name="voucherdetails" type="java.lang.Long">
+            <column name="voucherdetails" />
+        </property>
+        <property name="receiptpaymentdetailsid" type="java.lang.Long">
+            <column name="receiptpaymentdetailsid" />
+        </property>
+        <property name="partyledgerid" type="java.lang.Long">
+            <column name="partyledgerid" />
+        </property>
+        <property name="bankledgerid" type="java.lang.Long">
+            <column name="bankledgerid" />
+        </property>
+        <property name="vatonpurchase" type="java.lang.Long">
+            <column name="vatonpurchase" />
+        </property>
+        <property name="vatonsales" type="java.lang.Long">
+            <column name="vatonsales" />
+        </property>
+        <property name="bankvoucherid" type="java.lang.Long">
+            <column name="bankvoucherid" />
+        </property>
+        <property name="receiptvoucherid" type="java.lang.Long">
+            <column name="receiptvoucherid" />
+        </property>
+        <property name="journalvoucherid" type="java.lang.Long">
+            <column name="journalvoucherid" />
+        </property>
+        <property name="epfloanapplicationid" type="java.lang.Long">
+            <column name="epfloanapplicationid" />
+        </property>
+        <property name="bankchallanid" type="java.lang.Long">
+            <column name="bankchallanid" />
+        </property>
+        <property name="ancillaryadjaccid" type="java.lang.Long">
+            <column name="ancillaryadjaccid" />
+        </property>
+        <property name="voucherhistoryid" type="java.lang.Long">
+            <column name="voucherhistoryid" />
+        </property>
+        <property name="voucherdetailshistoryid" type="java.lang.Long">
+            <column name="voucherdetailshistoryid" />
+        </property>
+        <property name="receiptpaymentdetailshistoryid" type="java.lang.Long">
+            <column name="receiptpaymentdetailshistoryid" />
+        </property>
+        <property name="taxoncst" type="java.lang.Long">
+            <column name="taxoncst" />
+        </property>
+        <property name="dabatchid" type="java.lang.Long">
+            <column name="dabatchid" />
+        </property>
+        <property name="irscode" type="string">
+            <column name="irscode" length="20" />
+        </property>
+        <property name="interregionaccountsid" type="java.lang.Long">
+            <column name="interregionaccountsid" />
+        </property>
+        <property name="interregionaccountsreconcil" type="java.lang.Long">
+            <column name="interregionaccountsreconcil" />
+        </property>
+        <property name="budgetdetailsid" type="java.lang.Long">
+            <column name="budgetdetailsid" />
+        </property>
+        <property name="payrollvoucherid" type="java.lang.Long">
+            <column name="payrollvoucherid" />
+        </property>
+        <property name="bankreconciliationdetailsid" type="java.lang.Long">
+            <column name="bankreconciliationdetailsid" />
+        </property>
+        <property name="monthlyexpenditureid" type="java.lang.Long">
+            <column name="monthlyexpenditureid" />
+        </property>
+        <property name="billssigningauthority" type="string">
+            <column name="billssigningauthority" length="20" />
+        </property>
+        <property name="brsdetailsid" type="java.lang.Long">
+            <column name="brsdetailsid" />
+        </property>
+    </class>
+</hibernate-mapping>

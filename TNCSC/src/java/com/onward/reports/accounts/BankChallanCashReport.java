@@ -1,0 +1,141 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.onward.reports.accounts;
+
+/**
+ *
+ * @author Prince vijayakumar.M
+ */
+import com.onward.action.OnwardAction;
+import com.onward.common.AmoConvertion;
+import com.onward.valueobjects.AccountsModel;
+import com.onward.valueobjects.AccountsSubModel;
+import java.io.*;
+import java.text.DecimalFormat;
+import java.util.*;
+
+public class BankChallanCashReport extends OnwardAction {
+
+    private final char[] FORM_FEED = {(char) 12};
+    private final char LARGEFONT = (char) 14;
+    private final char[] BOLD = {(char) 14, (char) 15};
+    private final char RELEASE = (char) 18;
+    private char[] horizontalsign = new char[132];
+    private char[] equalline = new char[132];
+    private char[] horizontalline = new char[132];
+    private int lineno = 1;
+    private final DecimalFormat decimalFormat = new DecimalFormat("####0.00");
+    private int count = 0;
+    private String line = " | ";
+    private String line1 = "|";
+    private String line2 = " |";
+    private double totalamount = 0;
+
+    public BankChallanCashReport() {
+        for (int i = 0; i < 132; i++) {
+            horizontalsign[i] = '~';
+        }
+        for (int i = 0; i < 132; i++) {
+            horizontalline[i] = '-';
+        }
+        for (int i = 0; i < 132; i++) {
+            equalline[i] = '=';
+        }
+    }
+
+    public void getPrintWriter(AccountsModel am, String filePath) {
+
+        try {
+            PrintWriter pw = null;
+            File file = new File(filePath);
+            try {
+                pw = new PrintWriter(new BufferedWriter(new FileWriter(file, true)));
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+            pw.println();
+            pw.printf("%31s%-35s", "                               ", am.getBankname());
+            pw.println();
+            pw.printf("%24s%-50s", "                        ", (am.getBranchname() == null) ? "" : am.getBranchname());
+            pw.println();
+            pw.println();
+            pw.write(BOLD);
+            pw.printf("%-39s%-45s", "TAMIL NADU CIVIL SUPPLIES CORPORATION, ", am.getRegion());
+            pw.write(RELEASE);
+            pw.println();
+            pw.println();
+            pw.printf("%-64s%-11s", "   Current Account Pay-in-Slip                 Remittance  Date:", am.getSanctioneddate());
+            pw.println();
+            pw.printf("%s", "   Account No.   "+am.getBankaccountno()+"                    Realisation Date:");
+            pw.println();
+            pw.printf("%s", "  -------------------------------------------------------------------------------");
+            pw.println();
+            pw.printf("%s", "  |Name of the Drawee Branch               DD/CHQ.NO      DATE            AMOUNT|");
+            pw.println();
+            pw.printf("%s", "  |-----------------------------------------------------------------------------|");
+            pw.println();
+            pw.printf("%54s%10s%s%14s%2s", "  |           By Cash :                 |   Cash     |", am.getAccdate(), "|", am.getAmount(), " |");
+            pw.println();
+            pw.printf("%s", "  |-------------------------------------|------------|----------|---------------|");
+            pw.println();
+            pw.printf("%s", "  |    1000 X                           |            |          |               |");
+            pw.println();
+            pw.printf("%s", "  |     500 X                           |            |          |               |");
+            pw.println();
+            pw.printf("%s", "  |     100 X                           |            |          |               |");
+            pw.println();
+            pw.printf("%s", "  |      50 X                           |            |          |               |");
+            pw.println();
+            pw.printf("%s", "  |      20 X                           |            |          |               |");
+            pw.println();
+            pw.printf("%s", "  |      10 X                           |            |          |               |");
+            pw.println();
+            pw.printf("%s", "  |       5 X                           |            |          |               |");
+            pw.println();
+            pw.printf("%s", "  |    COINS-                           |            |          |               |");
+            pw.println();
+            pw.printf("%s", "  |                                     |            |          |               |");
+            pw.println();
+            pw.printf("%s", "  |                                     |            |          |               |");
+            pw.println();
+            pw.printf("%s", "  |-------------------------------------|            |          |               |");
+            pw.println();
+            pw.printf("%s", "  |    TOTAL                            |            |          |               |");
+            pw.println();
+            pw.printf("%65s%14s%2s", "  |                                     |            |TOTAL     |", am.getAmount(), " |");
+            pw.println();
+            pw.printf("%s", "  --------------------------------------|------------|----------|----------------");
+            pw.println();
+
+            StringBuffer buffer = new StringBuffer();
+            long netpaymenttop = Math.round(Double.valueOf(am.getAmount()));
+            buffer.append(" (Rupees ");
+            buffer.append(new AmoConvertion().ConvertNumToStr(netpaymenttop));
+            buffer.append(" Only.)");
+
+            pw.println();
+            Iterator itr = JoinString(buffer.toString(), 80, " ").iterator();
+            while (itr.hasNext()) {
+                pw.printf("%-80s", itr.next());
+                pw.println();
+            }
+            pw.println();
+            pw.printf("%s", "Branch Manager/Accountant                               Signature of remitter");
+            pw.println();
+            pw.printf("%s", "                                                         For TNCSC Limited");
+            pw.println();
+            pw.printf("%s", "ScrollTransfer/Cashier                                 Head Office,Chennai-10");
+            pw.println();
+            pw.println();
+            pw.write(FORM_FEED);
+            pw.println();
+
+            pw.flush();
+            pw.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+}

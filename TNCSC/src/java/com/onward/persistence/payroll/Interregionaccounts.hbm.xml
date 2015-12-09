@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Interregionaccounts" table="interregionaccounts" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="100" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="regionmaster" class="com.onward.persistence.payroll.Regionmaster" fetch="select">
+            <column name="region" length="5" />
+        </many-to-one>
+        <property name="fileno" type="string">
+            <column name="fileno" length="10" />
+        </property>
+        <property name="date" type="date">
+            <column name="date" length="13" />
+        </property>
+        <set name="interregionaccountsreconcils" inverse="true">
+            <key>
+                <column name="interregionaccounts" length="100" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Interregionaccountsreconcil" />
+        </set>
+    </class>
+</hibernate-mapping>

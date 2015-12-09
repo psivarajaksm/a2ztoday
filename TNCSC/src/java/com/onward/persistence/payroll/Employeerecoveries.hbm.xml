@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Employeerecoveries" table="employeerecoveries" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="employeemaster" class="com.onward.persistence.payroll.Employeemaster" fetch="select">
+            <column name="employeeprovidentfundnumber" length="25" />
+        </many-to-one>
+        <property name="deductioncode" type="string">
+            <column name="deductioncode" length="25" />
+        </property>
+        <property name="loandate" type="date">
+            <column name="loandate" length="13" />
+        </property>
+        <property name="loanamount" type="big_decimal">
+            <column name="loanamount" precision="20" />
+        </property>
+        <property name="totalinstallment" type="java.lang.Integer">
+            <column name="totalinstallment" />
+        </property>
+        <property name="currentinstallment" type="java.lang.Integer">
+            <column name="currentinstallment" />
+        </property>
+        <property name="installmentamount" type="big_decimal">
+            <column name="installmentamount" precision="25" />
+        </property>
+        <property name="firstinstallmentamount" type="big_decimal">
+            <column name="firstinstallmentamount" precision="25" />
+        </property>
+        <property name="loanbalance" type="big_decimal">
+            <column name="loanbalance" precision="25" />
+        </property>
+        <property name="loantype" type="string">
+            <column name="loantype" length="25" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="25" />
+        </property>
+        <property name="fileno" type="string">
+            <column name="fileno" length="25" />
+        </property>
+        <property name="regionno" type="string">
+            <column name="regionno" length="25" />
+        </property>
+        <property name="synchronized_" type="java.lang.Boolean">
+            <column name="synchronized" />
+        </property>
+        <property name="accregion" type="string">
+            <column name="accregion" length="50" />
+        </property>
+        <set name="employeerecoverydetailses" inverse="true">
+            <key>
+                <column name="employeerecoveriesid" length="50" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Employeerecoverydetails" />
+        </set>
+    </class>
+</hibernate-mapping>

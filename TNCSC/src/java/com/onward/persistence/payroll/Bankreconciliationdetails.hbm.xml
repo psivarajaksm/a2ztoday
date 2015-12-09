@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Bankreconciliationdetails" table="bankreconciliationdetails" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="100" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="bankledger" class="com.onward.persistence.payroll.Bankledger" fetch="select">
+            <column name="bankname" length="100" />
+        </many-to-one>
+        <many-to-one name="regionmaster" class="com.onward.persistence.payroll.Regionmaster" fetch="select">
+            <column name="region" length="5" />
+        </many-to-one>
+        <many-to-one name="accountingyear" class="com.onward.persistence.payroll.Accountingyear" fetch="select">
+            <column name="accountingperiod" length="100" />
+        </many-to-one>
+        <property name="transactiondate" type="date">
+            <column name="transactiondate" length="13" />
+        </property>
+        <property name="valuedate" type="date">
+            <column name="valuedate" length="13" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="1000" />
+        </property>
+        <property name="referenceno" type="string">
+            <column name="referenceno" length="100" />
+        </property>
+        <property name="branchcode" type="string">
+            <column name="branchcode" length="25" />
+        </property>
+        <property name="month" type="java.lang.Integer">
+            <column name="month" />
+        </property>
+        <property name="year" type="java.lang.Integer">
+            <column name="year" />
+        </property>
+        <property name="debit" type="big_decimal">
+            <column name="debit" precision="25" />
+        </property>
+        <property name="credit" type="big_decimal">
+            <column name="credit" precision="25" />
+        </property>
+        <property name="balance" type="big_decimal">
+            <column name="balance" precision="25" />
+        </property>
+        <property name="otherbankname" type="string">
+            <column name="otherbankname" length="100" />
+        </property>
+        <property name="cancelled" type="java.lang.Boolean">
+            <column name="cancelled" />
+        </property>
+    </class>
+</hibernate-mapping>

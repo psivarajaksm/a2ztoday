@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Stoppayrolldetails" table="stoppayrolldetails" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="25" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="employeemaster" class="com.onward.persistence.payroll.Employeemaster" fetch="select">
+            <column name="epfno" length="25" />
+        </many-to-one>
+        <property name="startdate" type="date">
+            <column name="startdate" length="13" />
+        </property>
+        <property name="enddate" type="date">
+            <column name="enddate" length="13" />
+        </property>
+        <property name="reasoncode" type="string">
+            <column name="reasoncode" length="25" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="500" />
+        </property>
+        <property name="synchronized_" type="java.lang.Boolean">
+            <column name="synchronized" />
+        </property>
+        <property name="accregion" type="string">
+            <column name="accregion" length="50" />
+        </property>
+        <property name="createddate" type="date">
+            <column name="createddate" length="13" />
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="100" />
+        </property>
+        <property name="oldremarks" type="string">
+            <column name="oldremarks" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Usermaster" table="usermaster" schema="public">
+        <id name="userid" type="string">
+            <column name="userid" length="16" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="employeemaster" class="com.onward.persistence.payroll.Employeemaster" fetch="select">
+            <column name="epfno" length="25" />
+        </many-to-one>
+        <property name="sequencenumber" type="java.lang.Integer">
+            <column name="sequencenumber" />
+        </property>
+        <property name="salutationtype" type="string">
+            <column name="salutationtype" length="1" />
+        </property>
+        <property name="username" type="string">
+            <column name="username" length="100" />
+        </property>
+        <property name="usershortname" type="string">
+            <column name="usershortname" length="10" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="1" />
+        </property>
+        <property name="dateofbirth" type="date">
+            <column name="dateofbirth" length="13" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="1000" />
+        </property>
+        <property name="mobilenumber" type="string">
+            <column name="mobilenumber" length="15" />
+        </property>
+        <property name="fathername" type="string">
+            <column name="fathername" length="30" />
+        </property>
+        <property name="designation" type="string">
+            <column name="designation" length="10" />
+        </property>
+        <property name="emailid" type="string">
+            <column name="emailid" length="50" />
+        </property>
+        <property name="userstatus" type="java.lang.Integer">
+            <column name="userstatus" />
+        </property>
+        <property name="nextpwddate" type="date">
+            <column name="nextpwddate" length="13" />
+        </property>
+        <property name="encryptpassword" type="string">
+            <column name="encryptpassword" length="1000" />
+        </property>
+        <property name="secretekey" type="string">
+            <column name="secretekey" length="1000" />
+        </property>
+        <property name="secretquestionone" type="string">
+            <column name="secretquestionone" length="2" />
+        </property>
+        <property name="youranswerone" type="string">
+            <column name="youranswerone" length="50" />
+        </property>
+        <property name="secretquestiontwo" type="string">
+            <column name="secretquestiontwo" length="2" />
+        </property>
+        <property name="youranswertwo" type="string">
+            <column name="youranswertwo" length="50" />
+        </property>
+        <property name="favouritecolor" type="string">
+            <column name="favouritecolor" length="30" />
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="16" />
+        </property>
+        <property name="createddate" type="date">
+            <column name="createddate" length="13" />
+        </property>
+        <property name="employeeid" type="string">
+            <column name="employeeid" length="10" />
+        </property>
+        <property name="secretkey" type="string">
+            <column name="secretkey" length="1000" />
+        </property>
+        <property name="updatedby" type="string">
+            <column name="updatedby" length="100" />
+        </property>
+        <property name="updateddate" type="date">
+            <column name="updateddate" length="13" />
+        </property>
+        <property name="region" type="string">
+            <column name="region" length="5" not-null="true" />
+        </property>
+        <set name="useroperatingrightses" inverse="true">
+            <key>
+                <column name="userid" length="16" not-null="true" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Useroperatingrights" />
+        </set>
+    </class>
+</hibernate-mapping>

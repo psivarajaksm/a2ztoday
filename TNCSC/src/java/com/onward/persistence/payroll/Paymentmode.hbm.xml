@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Paymentmode" table="paymentmode" schema="public">
+        <id name="code" type="string">
+            <column name="code" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="type" type="string">
+            <column name="type" length="100" />
+        </property>
+        <set name="receiptpaymentdetailses" inverse="true">
+            <key>
+                <column name="paymentmode" length="10" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Receiptpaymentdetails" />
+        </set>
+        <set name="receiptpaymentdetailshistories" inverse="true">
+            <key>
+                <column name="paymentmode" length="10" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Receiptpaymentdetailshistory" />
+        </set>
+    </class>
+</hibernate-mapping>

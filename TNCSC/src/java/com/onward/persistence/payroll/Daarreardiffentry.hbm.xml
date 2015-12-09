@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Daarreardiffentry" table="daarreardiffentry" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="100" />
+            <generator class="assigned" />
+        </id>
+        <property name="supplementarypayroll" type="string">
+            <column name="supplementarypayroll" length="100" />
+        </property>
+        <property name="basic" type="big_decimal">
+            <column name="basic" precision="25" />
+        </property>
+        <property name="perpay" type="big_decimal">
+            <column name="perpay" precision="25" />
+        </property>
+        <property name="gradepay" type="big_decimal">
+            <column name="gradepay" precision="25" />
+        </property>
+        <property name="due" type="big_decimal">
+            <column name="due" precision="25" />
+        </property>
+        <property name="drawn" type="big_decimal">
+            <column name="drawn" precision="25" />
+        </property>
+        <property name="type" type="string">
+            <column name="type" length="50" />
+        </property>
+        <property name="arrear" type="big_decimal">
+            <column name="arrear" precision="25" />
+        </property>
+        <property name="epf" type="big_decimal">
+            <column name="epf" precision="25" />
+        </property>
+        <property name="month" type="java.lang.Integer">
+            <column name="month" />
+        </property>
+        <property name="year" type="java.lang.Integer">
+            <column name="year" />
+        </property>
+    </class>
+</hibernate-mapping>

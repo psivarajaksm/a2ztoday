@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Receiptpaymentdetails" table="receiptpaymentdetails" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="100" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="bankchallan" class="com.onward.persistence.payroll.Bankchallan" fetch="select">
+            <column name="bankchallan" length="100" />
+        </many-to-one>
+        <many-to-one name="bankledger" class="com.onward.persistence.payroll.Bankledger" fetch="select">
+            <column name="bankname" length="100" />
+        </many-to-one>
+        <many-to-one name="partyledger" class="com.onward.persistence.payroll.Partyledger" fetch="select">
+            <column name="partyledger" length="100" not-null="true" />
+        </many-to-one>
+        <many-to-one name="voucher" class="com.onward.persistence.payroll.Voucher" fetch="select">
+            <column name="voucher" length="100" />
+        </many-to-one>
+        <many-to-one name="chequedetails" class="com.onward.persistence.payroll.Chequedetails" fetch="select">
+            <column name="chequedetails" length="100" />
+        </many-to-one>
+        <many-to-one name="paymentmode" class="com.onward.persistence.payroll.Paymentmode" fetch="select">
+            <column name="paymentmode" length="10" />
+        </many-to-one>
+        <property name="refno" type="string">
+            <column name="refno" length="100" />
+        </property>
+        <property name="chequeno" type="string">
+            <column name="chequeno" length="100" />
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="25" />
+        </property>
+        <property name="cancelled" type="java.lang.Boolean">
+            <column name="cancelled" />
+        </property>
+        <property name="region" type="string">
+            <column name="region" length="5" />
+        </property>
+        <property name="serialno" type="java.lang.Integer">
+            <column name="serialno" />
+        </property>
+        <property name="chequedate" type="date">
+            <column name="chequedate" length="13" />
+        </property>
+        <property name="favourof" type="string">
+            <column name="favourof" length="250" />
+        </property>
+        <property name="createddate" type="date">
+            <column name="createddate" length="13" />
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="100" />
+        </property>
+        <property name="otherbankname" type="string">
+            <column name="otherbankname" length="250" />
+        </property>
+        <property name="realized" type="java.lang.Boolean">
+            <column name="realized" />
+        </property>
+        <property name="realizeddate" type="date">
+            <column name="realizeddate" length="13" />
+        </property>
+        <set name="receiptpaymentdetailshistories" inverse="true">
+            <key>
+                <column name="receiptpaymentdetails" length="100" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Receiptpaymentdetailshistory" />
+        </set>
+    </class>
+</hibernate-mapping>

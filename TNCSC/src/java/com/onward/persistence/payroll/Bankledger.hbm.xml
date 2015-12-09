@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Bankledger" table="bankledger" schema="public">
+        <id name="code" type="string">
+            <column name="code" length="100" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="regionmaster" class="com.onward.persistence.payroll.Regionmaster" fetch="select">
+            <column name="region" length="5" />
+        </many-to-one>
+        <property name="bankname" type="string">
+            <column name="bankname" length="100" />
+        </property>
+        <property name="branchname" type="string">
+            <column name="branchname" length="100" />
+        </property>
+        <property name="accountno" type="string">
+            <column name="accountno" length="100" />
+        </property>
+        <property name="add1" type="string">
+            <column name="add1" length="100" />
+        </property>
+        <property name="add2" type="string">
+            <column name="add2" length="100" />
+        </property>
+        <property name="add3" type="string">
+            <column name="add3" length="100" />
+        </property>
+        <property name="zipcode" type="string">
+            <column name="zipcode" length="20" />
+        </property>
+        <set name="receiptpaymentdetailshistories" inverse="true">
+            <key>
+                <column name="bankname" length="100" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Receiptpaymentdetailshistory" />
+        </set>
+        <set name="chequedetailses" inverse="true">
+            <key>
+                <column name="bankname" length="100" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Chequedetails" />
+        </set>
+        <set name="bankreconciliationdetailses" inverse="true">
+            <key>
+                <column name="bankname" length="100" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Bankreconciliationdetails" />
+        </set>
+        <set name="bankchallans" inverse="true">
+            <key>
+                <column name="bank" length="100" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Bankchallan" />
+        </set>
+        <set name="receiptpaymentdetailses" inverse="true">
+            <key>
+                <column name="bankname" length="100" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Receiptpaymentdetails" />
+        </set>
+    </class>
+</hibernate-mapping>

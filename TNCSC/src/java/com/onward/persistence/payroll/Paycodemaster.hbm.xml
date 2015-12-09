@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Paycodemaster" table="paycodemaster" schema="public">
+        <id name="paycode" type="string">
+            <column name="paycode" length="6" />
+            <generator class="assigned" />
+        </id>
+        <property name="paycodename" type="string">
+            <column name="paycodename" length="30" />
+        </property>
+        <property name="paycodetype" type="java.lang.Character">
+            <column name="paycodetype" length="1" />
+        </property>
+        <property name="paypercentage" type="big_decimal">
+            <column name="paypercentage" precision="3" />
+        </property>
+        <property name="synchronized_" type="java.lang.Boolean">
+            <column name="synchronized" />
+        </property>
+        <property name="grouphead" type="string">
+            <column name="grouphead" length="6" />
+        </property>
+        <property name="paycodeserial" type="string">
+            <column name="paycodeserial" length="6" />
+        </property>
+        <set name="employeedeductionaccountcodes" inverse="true">
+            <key>
+                <column name="paycode" length="6" not-null="true" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Employeedeductionaccountcode" />
+        </set>
+        <set name="salarydeductionotherses" inverse="true">
+            <key>
+                <column name="deductioncode" length="6" not-null="true" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Salarydeductionothers" />
+        </set>
+        <set name="ccahras" inverse="true">
+            <key>
+                <column name="paycode" length="6" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Ccahra" />
+        </set>
+    </class>
+</hibernate-mapping>

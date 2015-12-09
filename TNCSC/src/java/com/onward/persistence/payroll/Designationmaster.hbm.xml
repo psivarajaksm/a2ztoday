@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Designationmaster" table="designationmaster" schema="public">
+        <id name="designationcode" type="string">
+            <column name="designationcode" length="6" />
+            <generator class="assigned" />
+        </id>
+        <property name="designation" type="string">
+            <column name="designation" length="100" />
+        </property>
+        <property name="payscalecode" type="string">
+            <column name="payscalecode" length="20" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="100" />
+        </property>
+        <property name="orderno" type="string">
+            <column name="orderno" length="10" />
+        </property>
+        <property name="synchronized_" type="java.lang.Boolean">
+            <column name="synchronized" />
+        </property>
+        <property name="designationgroup" type="string">
+            <column name="designationgroup" length="3" />
+        </property>
+    </class>
+</hibernate-mapping>

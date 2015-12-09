@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Supplementatypaybill" table="supplementatypaybill" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="100" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="employeemaster" class="com.onward.persistence.payroll.Employeemaster" fetch="select">
+            <column name="employeeprovidentfundnumber" length="25" />
+        </many-to-one>
+        <many-to-one name="dabatchdetails" class="com.onward.persistence.payroll.Dabatchdetails" fetch="select">
+            <column name="dabatch" length="100" />
+        </many-to-one>
+        <property name="accregion" type="string">
+            <column name="accregion" length="50" />
+        </property>
+        <property name="noofdays" type="big_decimal">
+            <column name="noofdays" precision="5" />
+        </property>
+        <property name="date" type="date">
+            <column name="date" length="13" />
+        </property>
+        <property name="type" type="string">
+            <column name="type" length="20" />
+        </property>
+        <property name="cancelled" type="java.lang.Boolean">
+            <column name="cancelled" />
+        </property>
+        <property name="section" type="string">
+            <column name="section" length="10" />
+        </property>
+        <property name="subsection" type="string">
+            <column name="subsection" length="10" />
+        </property>
+        <property name="paymentmode" type="string">
+            <column name="paymentmode" length="10" />
+        </property>
+        <property name="sldate" type="date">
+            <column name="sldate" length="13" />
+        </property>
+        <property name="employeecategory" type="string">
+            <column name="employeecategory" length="2" />
+        </property>
+        <property name="designation" type="string">
+            <column name="designation" length="10" />
+        </property>
+        <property name="createddate" type="date">
+            <column name="createddate" length="13" />
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="100" />
+        </property>
+        <set name="supplementarypayrollprocessingdetailses" inverse="true">
+            <key>
+                <column name="supplementatypaybillid" length="100" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Supplementarypayrollprocessingdetails" />
+        </set>
+    </class>
+</hibernate-mapping>

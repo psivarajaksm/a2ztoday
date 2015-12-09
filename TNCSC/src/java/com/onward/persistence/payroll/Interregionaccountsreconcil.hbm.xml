@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Interregionaccountsreconcil" table="interregionaccountsreconcil" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="100" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="interregionaccounts" class="com.onward.persistence.payroll.Interregionaccounts" fetch="select">
+            <column name="interregionaccounts" length="100" />
+        </many-to-one>
+        <many-to-one name="voucherdetailsByVoucherdetailsdestination" class="com.onward.persistence.payroll.Voucherdetails" fetch="select">
+            <column name="voucherdetailsdestination" length="100" />
+        </many-to-one>
+        <many-to-one name="voucherdetailsByVoucherdetailssource" class="com.onward.persistence.payroll.Voucherdetails" fetch="select">
+            <column name="voucherdetailssource" length="100" />
+        </many-to-one>
+        <property name="sourceamount" type="big_decimal">
+            <column name="sourceamount" precision="25" />
+        </property>
+        <property name="destinationamount" type="big_decimal">
+            <column name="destinationamount" precision="25" />
+        </property>
+        <property name="cancelled" type="java.lang.Boolean">
+            <column name="cancelled" />
+        </property>
+    </class>
+</hibernate-mapping>

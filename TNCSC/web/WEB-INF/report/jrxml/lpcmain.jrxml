@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="lpcmain"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="841"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="14"
+		 bottomMargin="14"
+		 whenNoDataType="NoPages"
+		 isFloatColumnFooter="true"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="true">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="epfno" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="monthandyear" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="designation" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="regionname" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="empname" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="BASIC PAY" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="D.A." isForPrompting="false" class="java.lang.String"/>
+	<parameter name="H.R.A." isForPrompting="false" class="java.lang.String"/>
+	<parameter name="C.C.A" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="GRADEPAY" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="E.P.F." isForPrompting="false" class="java.lang.String"/>
+	<parameter name="F.B.F" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="INCOME TAX" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="H.I.S." isForPrompting="false" class="java.lang.String"/>
+	<parameter name="EPF LOAN" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="deductiontotal" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="earningstotal" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" isForPrompting="true" class="java.lang.String">
+		<defaultValueExpression ><![CDATA[".\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="reportspath" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="reportdetails" isForPrompting="false" class="java.util.HashMap"/>
+	<parameter name="paycodenameear" isForPrompting="false" class="java.lang.String"/>
+
+	<field name="paycode" class="java.lang.String"/>
+	<field name="paycodename" class="java.lang.String"/>
+	<field name="earnings" class="java.lang.String"/>
+	<field name="deduction" class="java.lang.String"/>
+	<field name="loanbalance" class="java.lang.String"/>
+	<field name="nthinstallment" class="java.lang.String"/>
+	<field name="totalinstallment" class="java.lang.String"/>
+	<field name="regionname" class="java.lang.String"/>
+	<field name="empname" class="java.lang.String"/>
+	<field name="designation" class="java.lang.String"/>
+	<field name="paycodenameear" class="java.lang.String"/>
+	<field name="paycodenameded" class="java.lang.String"/>
+	<field name="loanbalance1" class="java.lang.String"/>
+	<field name="loanbalance2" class="java.lang.String"/>
+	<field name="paycodenamelon1" class="java.lang.String"/>
+	<field name="paycodenamelon2" class="java.lang.String"/>
+	<field name="subReportDS" class="java.lang.String"/>
+	<field name="group" class="java.lang.Integer"/>
+	<field name="subReportDS1" class="java.lang.String"/>
+
+	<variable name="earningtotal" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[( $F{earnings}!=null && !$F{earnings}.equals("") ? new BigDecimal($F{earnings}) : new BigDecimal("0.00"))]]></variableExpression>
+	</variable>
+	<variable name="deductiontotal" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
+		<variableExpression><![CDATA[( $F{deduction}!=null && !$F{deduction}.equals("") ? new BigDecimal($F{deduction}) : new BigDecimal("0.00"))]]></variableExpression>
+	</variable>
+	<variable name="netsalary" class="java.math.BigDecimal" resetType="Report" calculation="Nothing">
+		<variableExpression><![CDATA[$V{earningtotal}.subtract( $V{deductiontotal} )]]></variableExpression>
+	</variable>
+
+		<group  name="total" isStartNewColumn="true" isStartNewPage="true" isReprintHeaderOnEachPage="true" >
+			<groupExpression><![CDATA[$F{group}]]></groupExpression>
+			<groupHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+			</groupHeader>
+			<groupFooter>
+			<band height="0"  isSplitAllowed="false" >
+			</band>
+			</groupFooter>
+		</group>
+		<background>
+			<band height="0"  isSplitAllowed="false" >
+			</band>
+		</background>
+		<title>
+			<band height="18"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="0"
+						width="535"
+						height="18"
+						key="textField-1"
+						isPrintWhenDetailOverflows="true"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["TAMIL NADU CIVIL SUPPLIES CORPORATION, "+$P{regionname}.toUpperCase()]]></textFieldExpression>
+				</textField>
+			</band>
+		</title>
+		<pageHeader>
+			<band height="18"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="0"
+						width="535"
+						height="18"
+						key="textField"
+						isPrintWhenDetailOverflows="true"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" isBold="true" isPdfEmbedded ="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["LAST PAY CERTIFICATE ("+$P{monthandyear}+")"]]></textFieldExpression>
+				</textField>
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="false" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="43"  isSplitAllowed="true" >
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="0"
+						y="22"
+						width="163"
+						height="21"
+						key="subreport-1"
+						positionType="Float"
+						isRemoveLineWhenBlank="true"
+						isPrintInFirstWholeBand="true">
+							<printWhenExpression><![CDATA[$F{group}.intValue()==2 ? Boolean.TRUE:Boolean.FALSE]]></printWhenExpression>
+						</reportElement>
+					<subreportParameter  name="epfno">
+						<subreportParameterExpression><![CDATA[$P{epfno}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="monthandyear">
+						<subreportParameterExpression><![CDATA[$P{monthandyear}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="designation">
+						<subreportParameterExpression><![CDATA[$P{designation}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="regionname">
+						<subreportParameterExpression><![CDATA[$P{regionname}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="empname">
+						<subreportParameterExpression><![CDATA[$P{empname}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="BASIC PAY">
+						<subreportParameterExpression><![CDATA[$P{BASIC PAY}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="D.A.">
+						<subreportParameterExpression><![CDATA[$P{D.A.}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="H.R.A.">
+						<subreportParameterExpression><![CDATA[$P{H.R.A.}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="C.C.A">
+						<subreportParameterExpression><![CDATA[$P{C.C.A}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="GRADEPAY">
+						<subreportParameterExpression><![CDATA[$P{GRADEPAY}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="E.P.F.">
+						<subreportParameterExpression><![CDATA[$P{E.P.F.}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="F.B.F">
+						<subreportParameterExpression><![CDATA[$P{F.B.F}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="INCOME TAX">
+						<subreportParameterExpression><![CDATA[$P{INCOME TAX}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="H.I.S.">
+						<subreportParameterExpression><![CDATA[$P{H.I.S.}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="EPF LOAN">
+						<subreportParameterExpression><![CDATA[$P{EPF LOAN}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="deductiontotal">
+						<subreportParameterExpression><![CDATA[$P{deductiontotal}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="earningstotal">
+						<subreportParameterExpression><![CDATA[$P{earningstotal}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="SUBREPORT_DIR">
+						<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="reportspath">
+						<subreportParameterExpression><![CDATA[$P{reportspath}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="reportdetails">
+						<subreportParameterExpression><![CDATA[$P{reportdetails}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="subReportDS">
+						<subreportParameterExpression><![CDATA[$P{reportdetails}.get($F{subReportDS})]]></subreportParameterExpression>
+					</subreportParameter>
+					<dataSourceExpression><![CDATA[$P{reportdetails}.get( $F{subReportDS} )]]></dataSourceExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{reportspath}+"lpc_subreport0.jasper"]]></subreportExpression>
+				</subreport>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="0"
+						y="0"
+						width="163"
+						height="21"
+						key="subreport-2"
+						positionType="Float"
+						isRemoveLineWhenBlank="true"
+						isPrintInFirstWholeBand="true">
+							<printWhenExpression><![CDATA[$F{group}.intValue()==1 ? Boolean.TRUE:Boolean.FALSE]]></printWhenExpression>
+						</reportElement>
+					<subreportParameter  name="monthandyear">
+						<subreportParameterExpression><![CDATA[$P{monthandyear}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="designation">
+						<subreportParameterExpression><![CDATA[$P{designation}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="regionname">
+						<subreportParameterExpression><![CDATA[$P{regionname}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="SUBREPORT_DIR">
+						<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="reportspath">
+						<subreportParameterExpression><![CDATA[$P{reportspath}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="reportdetails">
+						<subreportParameterExpression><![CDATA[$P{reportdetails}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="subReportDS1">
+						<subreportParameterExpression><![CDATA[$P{reportdetails}.get($F{subReportDS1})]]></subreportParameterExpression>
+					</subreportParameter>
+					<dataSourceExpression><![CDATA[$P{reportdetails}.get( $F{subReportDS1} )]]></dataSourceExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{reportspath}+"lpc_subreport01.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="false" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="22"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="0"
+						y="4"
+						width="36"
+						height="18"
+						key="staticText-69"
+						stretchType="RelativeToTallestObject"
+						positionType="FixRelativeToBottom"
+						isPrintWhenDetailOverflows="true"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font pdfFontName="Times-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Datedddddddddddddd :]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="36"
+						y="4"
+						width="97"
+						height="18"
+						forecolor="#000000"
+						key="textField-31"
+						stretchType="RelativeToTallestObject"
+						positionType="FixRelativeToBottom"
+						isPrintWhenDetailOverflows="true"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement verticalAlignment="Middle">
+						<font pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="425"
+						y="4"
+						width="88"
+						height="18"
+						key="textField-32"
+						positionType="FixRelativeToBottom"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="SansSerif" pdfFontName="Helvetica" size="10" isBold="false" isPdfEmbedded ="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Page " + $V{PAGE_NUMBER} + " of "]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Report" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="478"
+						y="4"
+						width="55"
+						height="18"
+						key="textField-33"
+						positionType="FixRelativeToBottom"/>
+					<box topBorder="None" topBorderColor="#000000" leftBorder="None" leftBorderColor="#000000" rightBorder="None" rightBorderColor="#000000" bottomBorder="None" bottomBorderColor="#000000"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="SansSerif" pdfFontName="Helvetica" size="10" isBold="false" isPdfEmbedded ="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["" + $V{PAGE_NUMBER} + ""]]></textFieldExpression>
+				</textField>
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="false" >
+			</band>
+		</summary>
+</jasperReport>

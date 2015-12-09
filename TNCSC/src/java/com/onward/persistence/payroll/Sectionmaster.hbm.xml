@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Sectionmaster" table="sectionmaster" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="5" />
+            <generator class="assigned" />
+        </id>
+        <property name="sectionname" type="string">
+            <column name="sectionname" length="100" />
+        </property>
+        <property name="synchronized_" type="java.lang.Boolean">
+            <column name="synchronized" />
+        </property>
+        <property name="parentcode" type="string">
+            <column name="parentcode" length="10" />
+        </property>
+        <property name="region" type="string">
+            <column name="region" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

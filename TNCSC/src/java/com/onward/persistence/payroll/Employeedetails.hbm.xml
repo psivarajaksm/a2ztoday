@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 8 Jun, 2015 10:40:13 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Employeedetails" table="employeedetails" schema="public">
+        <composite-id name="id" class="com.onward.persistence.payroll.EmployeedetailsId">
+            <key-property name="epfno" type="string">
+                <column name="epfno" length="25" />
+            </key-property>
+            <key-property name="categorytype" type="string">
+                <column name="categorytype" length="5" />
+            </key-property>
+            <key-property name="serialno" type="int">
+                <column name="serialno" />
+            </key-property>
+        </composite-id>
+        <property name="detailtype1" type="string">
+            <column name="detailtype1" length="60" />
+        </property>
+        <property name="detailtype2" type="string">
+            <column name="detailtype2" length="20" />
+        </property>
+        <property name="detailtype3" type="string">
+            <column name="detailtype3" length="20" />
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="16" />
+        </property>
+        <property name="createddate" type="date">
+            <column name="createddate" length="13" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Payrollprocessingdetails" table="payrollprocessingdetails" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="100" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="employeemaster" class="com.onward.persistence.payroll.Employeemaster" fetch="select">
+            <column name="employeeprovidentfundnumber" length="25" />
+        </many-to-one>
+        <property name="startdate" type="date">
+            <column name="startdate" length="13" />
+        </property>
+        <property name="enddate" type="date">
+            <column name="enddate" length="13" />
+        </property>
+        <property name="workingday" type="java.lang.Short">
+            <column name="workingday" precision="3" scale="0" />
+        </property>
+        <property name="workedday" type="java.lang.Short">
+            <column name="workedday" precision="3" scale="0" />
+        </property>
+        <property name="leaveeligible" type="java.lang.Long">
+            <column name="leaveeligible" precision="10" scale="0" />
+        </property>
+        <property name="leaveavailed" type="java.lang.Short">
+            <column name="leaveavailed" precision="3" scale="0" />
+        </property>
+        <property name="process" type="java.lang.Boolean">
+            <column name="process" />
+        </property>
+        <property name="processedregular" type="java.lang.Boolean">
+            <column name="processedregular" />
+        </property>
+        <property name="year" type="java.lang.Integer">
+            <column name="year" />
+        </property>
+        <property name="month" type="java.lang.Integer">
+            <column name="month" />
+        </property>
+        <property name="salarystructureid" type="string">
+            <column name="salarystructureid" length="50" />
+        </property>
+        <property name="payrollprocessingid" type="string">
+            <column name="payrollprocessingid" length="50" />
+        </property>
+        <property name="synchronized_" type="java.lang.Boolean">
+            <column name="synchronized" />
+        </property>
+        <property name="accregion" type="string">
+            <column name="accregion" length="50" />
+        </property>
+        <property name="salarydays" type="java.lang.Integer">
+            <column name="salarydays" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="100" />
+        </property>
+        <property name="paymentmode" type="string">
+            <column name="paymentmode" length="5" />
+        </property>
+        <property name="section" type="string">
+            <column name="section" length="10" />
+        </property>
+        <property name="subsection" type="string">
+            <column name="subsection" length="10" />
+        </property>
+        <property name="employeecategory" type="string">
+            <column name="employeecategory" length="2" />
+        </property>
+        <property name="designation" type="string">
+            <column name="designation" length="10" />
+        </property>
+        <property name="createddate" type="date">
+            <column name="createddate" length="13" />
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="100" />
+        </property>
+        <set name="employeeearningstransactionses" inverse="true">
+            <key>
+                <column name="payrollprocessingdetailsid" length="100" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Employeeearningstransactions" />
+        </set>
+        <set name="employeerecoverydetailses" inverse="true">
+            <key>
+                <column name="payrollprocessingdetailsid" length="100" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Employeerecoverydetails" />
+        </set>
+        <set name="employeedeductionstransactionses" inverse="true">
+            <key>
+                <column name="payrollprocessingdetailsid" length="100" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Employeedeductionstransactions" />
+        </set>
+        <set name="employeeloansandadvancesdetailses" inverse="true">
+            <key>
+                <column name="payrollprocessingdetailsid" length="100" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Employeeloansandadvancesdetails" />
+        </set>
+    </class>
+</hibernate-mapping>

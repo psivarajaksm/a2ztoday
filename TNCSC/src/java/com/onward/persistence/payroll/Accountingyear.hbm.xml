@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24 Aug, 2015 3:09:21 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.onward.persistence.payroll.Accountingyear" table="accountingyear" schema="public">
+        <id name="id" type="string">
+            <column name="id" length="100" />
+            <generator class="assigned" />
+        </id>
+        <property name="startmonth" type="java.lang.Integer">
+            <column name="startmonth" />
+        </property>
+        <property name="startyear" type="java.lang.Integer">
+            <column name="startyear" />
+        </property>
+        <property name="endmonth" type="java.lang.Integer">
+            <column name="endmonth" />
+        </property>
+        <property name="endyear" type="java.lang.Integer">
+            <column name="endyear" />
+        </property>
+        <set name="brsdetailses" inverse="true">
+            <key>
+                <column name="accountingperiod" length="100" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Brsdetails" />
+        </set>
+        <set name="accountingserialnos" inverse="true">
+            <key>
+                <column name="accountingyearid" length="100" not-null="true" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Accountingserialno" />
+        </set>
+        <set name="vouchers" inverse="true">
+            <key>
+                <column name="accountingperiod" length="100" not-null="true" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Voucher" />
+        </set>
+        <set name="epfloanapplications" inverse="true">
+            <key>
+                <column name="accountingyear" length="100" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Epfloanapplication" />
+        </set>
+        <set name="voucherhistories" inverse="true">
+            <key>
+                <column name="accountingperiod" length="100" not-null="true" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Voucherhistory" />
+        </set>
+        <set name="epfopeningbalances" inverse="true">
+            <key>
+                <column name="accountingyear" length="100" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Epfopeningbalance" />
+        </set>
+        <set name="bankreconciliationdetailses" inverse="true">
+            <key>
+                <column name="accountingperiod" length="100" />
+            </key>
+            <one-to-many class="com.onward.persistence.payroll.Bankreconciliationdetails" />
+        </set>
+    </class>
+</hibernate-mapping>
